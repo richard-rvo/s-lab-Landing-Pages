@@ -1,0 +1,43 @@
+════════════════════════════════════════════════════════════════════
+  IDENTIDADE 2 · TERRACOTA — PROMPTS DE REGENERAÇÃO
+  Persona: Dra. Helena Vasco (saúde hormonal feminina, editorial premium).
+  Cole no Codex/ChatGPT. 1 bloco por site + prompt de imagem no fim.
+════════════════════════════════════════════════════════════════════
+
+SISTEMA DE DESIGN (vale para os 3 sites):
+• Single-file HTML autocontido (CSS inline, SVG inline, Google Fonts). Sem build.
+• Fundo marfim quente #F6F2EC (nunca branco puro). Marca terracota #B5654A. Acento sage #3E5641 (~5%).
+• Tipografia: DM Serif Display (títulos editoriais) + Inter (texto). Citações em itálico.
+• UX editorial premium: arcos, elegância assimétrica, raios refinados (~22px), 1 sombra quente, muito respiro.
+• Movimento único: reveal escalonado no load. Tokenize no :root: --brand,--accent,--paper,--font-display,--font-text.
+• VOZ: científica-mas-humana, autoridade serena, investigativa. "Investigar a raiz,
+  não silenciar o sintoma." Sem "transforme/jornada". Especificidade sóbria.
+• SAÚDE: sem promessa de cura/emagrecimento/quilos. CRN sempre visível.
+
+──────────────────────────────────────────
+► SITE 1 · BIO — retrato em arco (ou monograma) → nome serif → credencial mono →
+bio-assinatura itálica investigativa → 5 links (1 primário terracota + 4 ghost) →
+card de oferta (acento sage) → ícones sociais → rodapé com CRN.
+
+► SITE 2 · WHATSAPP (mono-CTA) — hero (headline que nomeia a causa oculta:
+"Seu cansaço pode ser hormonal e ninguém investigou" + sub itálico + botão verde) →
+3 benefícios (olhar investigativo / protocolo individual / poucos casos) → como
+funciona (3 passos) → prova (1 depoimento «confirme») → CTA final card terracota →
+FAB → rodapé. Tudo → wa.me/55[NÚMERO]?text=[MSG].
+
+► SITE 3 · VENDAS (infoproduto, PAS) — nav+CTA → hero (headline que reposiciona o
+sintoma: "E se o cansaço for um recado dos hormônios?") → DOR (4 itens, incl. "exames
+normais mas você sente algo") → solução (investigar a raiz) → 6 módulos → prova
+(2 depoimentos «confirme») → bônus → garantia (7 dias) → preço (de/por + parcelas) →
+FAQ (4, incl. "substitui consulta? Não") → CTA final → rodapé CRN + disclaimer.
+
+PREENCHA em todos: nome, CRN, especialidade, textos, links/checkout, número.
+
+════════════════════════════════════════════════════════════════════
+  RETRATO (gerar imagem IA → salvar como retrato-helena.jpg)
+════════════════════════════════════════════════════════════════════
+Editorial professional portrait of a woman nutritionist, ~35–45, serene and
+trustworthy expression, discreet neutral/clinical attire. Warm blurred ivory
+background (#F6F2EC), soft diffused warm light, subtle terracotta and sage palette.
+Clean editorial style, shallow depth of field, vertical 3:4, head-and-shoulders.
+No text, no watermark, no neon, no hard shadows, no oversaturated colors.

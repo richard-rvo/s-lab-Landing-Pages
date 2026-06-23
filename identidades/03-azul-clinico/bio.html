@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Marina Reis · Nutrição clínica e esportiva</title>
+<meta name="description" content="Nutrição clínica baseada em exames e evidência. Conheça a Dra. Marina Reis e agende sua avaliação.">
+
+<!--
+  IDENTIDADE 3 · AZUL CLÍNICO — SITE: LINK NA BIO
+  Persona: Dra. Marina Reis (clínica/esportiva, baseada em dados).
+  Troque [TROCAR] no :root e os textos. Foto: retrato-marina.jpg ao lado.
+  Prompt de IA: prompts-regeneracao.txt nesta pasta.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#2C6E7F; --accent:#DDA15E; --paper:#F1F4F5;
+  --font-display:"Archivo",system-ui,sans-serif;
+  --font-text:"IBM Plex Sans",system-ui,sans-serif;
+  --brand-soft:#3E8294; --paper-2:#E4EAEC; --ink:#16242A; --ink-2:#4D5C61;
+  --hairline:rgba(22,36,42,0.10); --font-mono:"IBM Plex Sans",ui-monospace,monospace;
+  --shadow:0 24px 50px -28px rgba(44,110,127,0.42),0 8px 20px -16px rgba(22,36,42,0.12);
+  --r:14px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-text);color:var(--ink);background:var(--paper);min-height:100dvh;line-height:1.5;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;
+  background-image:radial-gradient(55% 45% at 85% -5%,rgba(44,110,127,0.10),transparent 70%),radial-gradient(50% 40% at -10% 22%,rgba(221,161,94,0.08),transparent 70%);background-attachment:fixed;}
+.shell{width:100%;max-width:480px;padding:clamp(28px,7vw,52px) clamp(20px,6vw,34px) 40px;}
+.portrait{position:relative;width:clamp(132px,42vw,160px);aspect-ratio:1/1;margin:0 auto 22px;border-radius:18px;overflow:hidden;background:linear-gradient(150deg,var(--brand-soft),var(--brand));box-shadow:var(--shadow);}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.portrait .mono{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:64px;color:var(--paper);}
+.identity{text-align:center;}
+.name{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,8vw,40px);line-height:1.0;letter-spacing:-0.03em;margin-bottom:12px;}
+.cred{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:0.06em;color:var(--brand);display:inline-flex;align-items:center;gap:7px;margin-bottom:18px;background:rgba(44,110,127,0.08);padding:6px 12px;border-radius:999px;}
+.cred svg{width:14px;height:14px;}
+.bio{font-size:15px;line-height:1.6;color:var(--ink-2);max-width:24em;margin:0 auto 22px;}
+.bio b{color:var(--ink);font-weight:600;}
+/* faixa de dados — assinatura clínica */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:var(--r);overflow:hidden;margin-bottom:30px;}
+.stat{background:var(--paper);padding:14px 8px;text-align:center;}
+.stat .v{font-family:var(--font-display);font-weight:700;font-size:21px;color:var(--brand);letter-spacing:-0.02em;}
+.stat .l{font-family:var(--font-mono);font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-2);margin-top:2px;}
+.links{display:flex;flex-direction:column;gap:10px;}
+.link{display:flex;align-items:center;gap:14px;min-height:56px;padding:0 18px;border-radius:var(--r);text-decoration:none;font-size:15px;font-weight:500;transition:transform 200ms,box-shadow 200ms,background 200ms,border-color 200ms;}
+.link svg{width:18px;height:18px;flex:0 0 auto;stroke-width:1.7;}
+.link .lb{flex:1;}
+.link .ar{opacity:.5;transition:transform 200ms,opacity 200ms;}
+.link:hover{transform:translateY(-2px);}
+.link:hover .ar{transform:translateX(3px);opacity:.85;}
+.link.primary{background:var(--brand);color:#fff;box-shadow:0 12px 26px -12px rgba(44,110,127,0.6);}
+.link.ghost{background:rgba(255,255,255,0.7);border:1px solid var(--hairline);color:var(--ink);}
+.link.ghost:hover{background:#fff;border-color:rgba(44,110,127,0.3);}
+.offer{margin:24px 0 8px;padding:20px 22px;border-radius:var(--r);background:var(--ink);color:var(--paper);position:relative;overflow:hidden;}
+.offer .tag{font-family:var(--font-mono);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;display:block;}
+.offer h2{font-family:var(--font-display);font-weight:700;font-size:18px;line-height:1.25;margin-bottom:6px;letter-spacing:-0.01em;}
+.offer p{font-size:13px;color:rgba(241,244,245,0.7);margin-bottom:14px;}
+.offer a{font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;}
+.offer a:hover{gap:9px;}
+.social{display:flex;justify-content:center;gap:8px;margin:30px 0 22px;}
+.social a{width:42px;height:42px;display:grid;place-items:center;border-radius:var(--r);color:var(--ink-2);border:1px solid var(--hairline);background:rgba(255,255,255,0.55);transition:color 200ms,border-color 200ms,transform 200ms,background 200ms;}
+.social a:hover{color:var(--brand);border-color:rgba(44,110,127,0.3);transform:translateY(-2px);background:#fff;}
+.social svg{width:18px;height:18px;stroke-width:1.7;}
+footer{text-align:center;font-family:var(--font-mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-2);opacity:0.6;}
+@media(prefers-reduced-motion:no-preference){.reveal{opacity:0;transform:translateY(14px);animation:rise 720ms cubic-bezier(.2,.7,.2,1) forwards;}@keyframes rise{to{opacity:1;transform:none;}}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <div class="portrait reveal" style="animation-delay:40ms">
+    <img src="marina-profile.png" alt="Dra. Marina Reis, nutricionista clínica e esportiva" onerror="this.style.display='none'">
+  </div>
+  <div class="identity">
+    <h1 class="name reveal" style="animation-delay:120ms">Dra. Marina Reis</h1> <!-- [TROCAR] -->
+    <p class="cred reveal" style="animation-delay:180ms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 12 5 5L20 6"/></svg>CRN-3 00000 · Clínica &amp; esportiva</p> <!-- [TROCAR] -->
+    <p class="bio reveal" style="animation-delay:240ms">Nutrição baseada em <b>exames e evidência</b>. Seu cansaço, sua performance e sua composição corporal têm causas mensuráveis — e é nelas que eu trabalho.</p> <!-- [TROCAR] -->
+  </div>
+  <div class="stats reveal" style="animation-delay:300ms"> <!-- [TROCAR] -->
+    <div class="stat"><div class="v">+10</div><div class="l">anos de clínica</div></div>
+    <div class="stat"><div class="v">2.000+</div><div class="l">avaliações</div></div>
+    <div class="stat"><div class="v">100%</div><div class="l">individual</div></div>
+  </div>
+  <nav class="links" aria-label="Links principais"> <!-- [TROCAR] -->
+    <a class="link primary reveal" style="animation-delay:360ms" href="#agendar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      <span class="lb">Agendar avaliação</span><span class="ar">→</span>
+    </a>
+    <a class="link ghost reveal" style="animation-delay:410ms" href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Marina%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.2-5.3A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+      <span class="lb">WhatsApp</span><span class="ar">→</span>
+    </a>
+    <a class="link ghost reveal" style="animation-delay:460ms" href="#protocolos">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg>
+      <span class="lb">Protocolos &amp; exames</span><span class="ar">→</span>
+    </a>
+    <a class="link ghost reveal" style="animation-delay:510ms" href="https://instagram.com/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      <span class="lb">Instagram</span><span class="ar">→</span>
+    </a>
+    <a class="link ghost reveal" style="animation-delay:560ms" href="#artigos">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 5h16M4 12h16M4 19h10"/></svg>
+      <span class="lb">Artigos baseados em ciência</span><span class="ar">→</span>
+    </a>
+  </nav>
+  <section class="offer reveal" style="animation-delay:610ms" aria-label="Oferta atual"> <!-- [TROCAR] -->
+    <span class="tag">Agenda aberta</span>
+    <h2>Avaliação completa com leitura de exames</h2>
+    <p>Vagas limitadas por mês para acompanhamento individual e baseado em dados.</p>
+    <a href="#agendar">Agendar avaliação <span aria-hidden="true">→</span></a>
+  </section>
+  <div class="social reveal" style="animation-delay:660ms"> <!-- [TROCAR] -->
+    <a href="https://instagram.com/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="mailto:contato@marinareis.com.br" aria-label="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+    <a href="https://wa.me/5500000000000" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.2-5.3A8.5 8.5 0 1 1 21 11.5Z"/></svg></a>
+  </div>
+  <footer class="reveal" style="animation-delay:710ms">Dra. Marina Reis · CRN-3 00000</footer>
+</main>
+</body>
+</html>

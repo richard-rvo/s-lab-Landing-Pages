@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cami Brandão · Nutrição comportamental</title>
+<meta name="description" content="Reeducação alimentar sem dieta e sem culpa. Conheça a Cami Brandão e dê o primeiro passo.">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* ===== [TROCAR] 5 vars-camaleão ===== */
+  --brand:#40583F; --accent:#C9893D; --paper:#F3F1E9;
+  --font-display:"Fraunces",Georgia,serif;
+  --font-text:"Nunito Sans",system-ui,sans-serif;
+  /* ==================================== */
+  --brand-soft:#5C7359; --paper-2:#EAE6DA; --ink:#23291F; --ink-2:#5A6152;
+  --hairline:rgba(35,41,31,0.10); --font-mono:ui-monospace,monospace;
+  --shadow:0 24px 50px -26px rgba(64,88,63,0.45),0 8px 20px -16px rgba(35,41,31,0.12);
+  --r:24px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-text);color:var(--ink);background:var(--paper);min-height:100dvh;line-height:1.55;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;
+  background-image:radial-gradient(55% 45% at 85% -5%,rgba(201,137,61,0.10),transparent 70%),radial-gradient(50% 40% at -10% 20%,rgba(64,88,63,0.10),transparent 70%);background-attachment:fixed;}
+.shell{width:100%;max-width:480px;padding:clamp(30px,7vw,52px) clamp(20px,6vw,34px) 44px;}
+
+/* retrato orgânico */
+.portrait{position:relative;width:clamp(140px,46vw,176px);aspect-ratio:1/1;margin:0 auto 24px;border-radius:46% 54% 52% 48%/52% 46% 54% 48%;overflow:hidden;
+  background:radial-gradient(120% 100% at 50% 0%,var(--brand-soft),var(--brand) 72%);box-shadow:var(--shadow);}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.portrait .mono{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--font-display);font-size:72px;color:var(--paper);}
+.leaf{display:block;width:26px;height:26px;margin:0 auto 14px;color:var(--accent);}
+
+.identity{text-align:center;}
+.name{font-family:var(--font-display);font-weight:600;font-size:clamp(33px,9vw,42px);line-height:1.04;letter-spacing:-0.01em;margin-bottom:10px;}
+.cred{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--brand);display:inline-flex;align-items:center;gap:9px;margin-bottom:16px;}
+.cred::before,.cred::after{content:"";width:14px;height:1px;background:var(--hairline);}
+.bio{font-size:16px;line-height:1.6;color:var(--ink-2);max-width:24em;margin:0 auto 32px;}
+.bio b{color:var(--brand);font-weight:700;}
+
+.links{display:flex;flex-direction:column;gap:11px;}
+.link{display:flex;align-items:center;gap:14px;min-height:58px;padding:0 20px;border-radius:18px;text-decoration:none;font-size:15.5px;font-weight:600;
+  transition:transform 220ms cubic-bezier(.2,.7,.2,1),box-shadow 220ms,background 220ms,border-color 220ms;}
+.link svg{width:19px;height:19px;flex:0 0 auto;stroke-width:1.7;}
+.link .lb{flex:1;}
+.link .ar{opacity:.5;transition:transform 220ms,opacity 220ms;}
+.link:hover{transform:translateY(-2px);}
+.link:hover .ar{transform:translateX(3px);opacity:.85;}
+.link.primary{background:var(--brand);color:var(--paper);box-shadow:0 14px 30px -14px rgba(64,88,63,0.6);}
+.link.ghost{background:rgba(255,255,255,0.6);border:1px solid var(--hairline);color:var(--ink);}
+.link.ghost:hover{background:rgba(255,255,255,0.92);border-color:rgba(64,88,63,0.25);}
+
+.offer{margin:26px 0 8px;padding:22px;border-radius:var(--r);background:var(--paper-2);border:1px solid var(--hairline);position:relative;overflow:hidden;}
+.offer::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent);}
+.offer .tag{font-family:var(--font-mono);font-size:10px;letter-spacing:0.13em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;display:block;}
+.offer h2{font-family:var(--font-display);font-weight:600;font-size:20px;line-height:1.3;margin-bottom:6px;}
+.offer p{font-size:13.5px;color:var(--ink-2);margin-bottom:14px;}
+.offer a{font-size:13.5px;font-weight:700;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;}
+.offer a:hover{gap:9px;}
+
+.social{display:flex;justify-content:center;gap:8px;margin:30px 0 22px;}
+.social a{width:42px;height:42px;display:grid;place-items:center;border-radius:999px;color:var(--ink-2);border:1px solid var(--hairline);background:rgba(255,255,255,0.45);transition:color 200ms,border-color 200ms,transform 200ms,background 200ms;}
+.social a:hover{color:var(--brand);border-color:rgba(64,88,63,0.3);transform:translateY(-2px);background:rgba(255,255,255,0.92);}
+.social svg{width:18px;height:18px;stroke-width:1.7;}
+
+footer{text-align:center;font-family:var(--font-mono);font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-2);opacity:0.6;}
+
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(14px);animation:rise 720ms cubic-bezier(.2,.7,.2,1) forwards;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+}
+</style>
+</head>
+<body>
+<main class="shell">
+
+  <div class="portrait reveal" style="animation-delay:40ms">
+    <img src="cami-profile.png" alt="Cami Brandão, nutricionista comportamental" onerror="this.style.display='none'">
+  </div>
+
+  <svg class="leaf reveal" style="animation-delay:90ms" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M11 21c-4 0-7-3-7-9 6 0 9 1 9 9Z"/><path d="M20 5c0 7-4 11-9 12 1-7 4-11 9-12Z"/></svg>
+
+  <div class="identity">
+    <h1 class="name reveal" style="animation-delay:120ms">Cami Brandão</h1> <!-- [TROCAR] -->
+    <p class="cred reveal" style="animation-delay:170ms">CRN-3 00000 · Nutri comportamental</p> <!-- [TROCAR] -->
+    <p class="bio reveal" style="animation-delay:220ms">Comida não é inimiga e você não precisa de <b>mais uma dieta</b>. Bora reconstruir essa relação no seu tempo — sem culpa, sem proibição.</p> <!-- [TROCAR] -->
+  </div>
+
+  <nav class="links" aria-label="Links principais"> <!-- [TROCAR] -->
+    <a class="link primary reveal" style="animation-delay:280ms" href="#agendar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      <span class="lb">Marcar primeira conversa</span><span class="ar">→</span>
+    </a>
+    <a class="link ghost reveal" style="animation-delay:340ms" href="https://wa.me/5500000000000?text=Oi%20Cami%2C%20vim%20pela%20sua%20bio%20e%20quero%20saber%20como%20funciona">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.2-5.3A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+      <span class="lb">Chamar no WhatsApp</span><span class="ar">→</span>
+    </a>
+    <a class="link ghost reveal" style="animation-delay:400ms" href="#ebook">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h10l6 6v10H4Z"/><path d="M14 4v6h6"/></svg>
+      <span class="lb">E-book grátis: comer sem neura</span><span class="ar">→</span>
+    </a>
+    <a class="link ghost reveal" style="animation-delay:460ms" href="https://instagram.com/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      <span class="lb">Instagram</span><span class="ar">→</span>
+    </a>
+    <a class="link ghost reveal" style="animation-delay:520ms" href="#blog">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 5h16M4 12h16M4 19h10"/></svg>
+      <span class="lb">Receitas &amp; conteúdos</span><span class="ar">→</span>
+    </a>
+  </nav>
+
+  <section class="offer reveal" style="animation-delay:580ms" aria-label="Oferta atual"> <!-- [TROCAR] -->
+    <span class="tag">Começando agora</span>
+    <h2>Quem entra esse mês ganha a 1ª semana de acompanhamento</h2>
+    <p>Poucas vagas por mês pra eu dar atenção de verdade. Quando fecha, fecha.</p>
+    <a href="#agendar">Quero uma vaga <span aria-hidden="true">→</span></a>
+  </section>
+
+  <div class="social reveal" style="animation-delay:640ms"> <!-- [TROCAR] -->
+    <a href="https://instagram.com/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="mailto:oi@camibrandao.com.br" aria-label="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+    <a href="https://wa.me/5500000000000" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.2-5.3A8.5 8.5 0 1 1 21 11.5Z"/></svg></a>
+  </div>
+
+  <footer class="reveal" style="animation-delay:700ms">Cami Brandão · CRN-3 00000</footer>
+</main>
+</body>
+</html>

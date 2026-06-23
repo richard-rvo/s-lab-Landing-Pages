@@ -1,0 +1,49 @@
+════════════════════════════════════════════════════════════════════
+  IDENTIDADE 1 · VERDE HERBAL — PROMPTS DE REGENERAÇÃO
+  Persona: Cami Brandão (nutri comportamental, tom de amiga, anti-dieta).
+  Cole no Codex/ChatGPT. Há 1 bloco por site (bio / whatsapp / vendas) +
+  o prompt de imagem da persona no fim.
+════════════════════════════════════════════════════════════════════
+
+SISTEMA DE DESIGN (vale para os 3 sites):
+• Single-file HTML autocontido (CSS inline, SVG inline, Google Fonts). Sem build.
+• Fundo verde-creme #F3F1E9 (nunca branco puro). Marca sage #40583F. Acento mel #C9893D (~5%).
+• Tipografia: Fraunces (títulos, serif orgânica) + Nunito Sans (texto).
+• UX orgânica: cantos arredondados (20–28px), formas suaves, traços de folha, muito respiro.
+• Movimento único: reveal escalonado no load. Tokenize no :root: --brand,--accent,--paper,--font-display,--font-text.
+• VOZ: calorosa, 2ª pessoa, tom de amiga que entende de comida. Anti-dieta, sem
+  terror nutricional, sem "transforme/jornada". Frases curtas, linguagem real.
+• SAÚDE: sem promessa de emagrecimento/cura/quilos. CRN sempre visível.
+
+──────────────────────────────────────────
+► SITE 1 · BIO (link na bio)
+Estrutura: retrato orgânico (ou monograma) → nome → credencial mono → bio-assinatura
+(1–2 linhas, anti-dieta) → 5 links empilhados (1 primário sage + 4 ghost, toque ≥56px,
+ícone+rótulo+seta) → card de oferta (acento mel) → ícones sociais → rodapé com CRN.
+PREENCHA: nome, CRN, especialidade, bio, 5 links (com wa.me), oferta atual.
+
+──────────────────────────────────────────
+► SITE 2 · WHATSAPP (mono-CTA)
+Tudo leva ao WhatsApp (https://wa.me/55[NÚMERO]?text=[MSG]). Estrutura: hero (headline
+que TIRA a culpa da paciente + sub + botão verde + microcopy "respondo no mesmo dia")
+→ 3 benefícios → como funciona (3 passos) → prova (1 depoimento «confirme») → CTA final
+em card sage → FAB flutuante → rodapé. Headline modelo: "Você não acorda sem força de
+vontade — o problema é o método."
+PREENCHA: nicho, headline, sub, 3 benefícios, 3 passos, depoimento, número, mensagem.
+
+──────────────────────────────────────────
+► SITE 3 · VENDAS (infoproduto)
+Estrutura longa (PAS): nav+CTA → hero (headline que inverte a culpa) → DOR (4 itens na
+voz da paciente) → solução → 6 módulos/semanas → prova (2 depoimentos «confirme») →
+bônus → garantia (7 dias) → preço (de/por + parcelas) → FAQ (4, incl. "substitui consulta? Não")
+→ CTA final → rodapé com CRN + disclaimer. Headline modelo: "Você não falhou em 11 dietas.
+As dietas falharam com você."
+PREENCHA: nome do produto, módulos, depoimentos, bônus, garantia, preço, FAQ, checkout.
+
+════════════════════════════════════════════════════════════════════
+  RETRATO DA PERSONA (gerar imagem IA → salvar como retrato-cami.jpg)
+════════════════════════════════════════════════════════════════════
+Warm, approachable portrait of a young woman nutritionist, genuine relaxed smile,
+casual-professional look. Green-cream background (#F3F1E9), soft natural daylight,
+botanical/lifestyle feel, sage-green palette with warm honey accent. Vertical 3:4,
+head-and-shoulders. No text, no watermark, no neon, no hard shadows, no blue tint.

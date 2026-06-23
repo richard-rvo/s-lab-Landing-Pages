@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método Sem Dieta · Cami Brandão</title>
+<meta name="description" content="Programa online de reeducação alimentar comportamental. Pare o ciclo de dieta e culpa com a Cami Brandão.">
+
+<!--
+  IDENTIDADE 1 · VERDE HERBAL — SITE: PÁGINA DE VENDAS (infoproduto)
+  Persona: Cami Brandão · Produto: Método Sem Dieta.
+  Troque [TROCAR] no :root e os textos. Troque #comprar/#checkout pelo seu pagamento.
+  ⚠️ Saúde: sem promessa de cura/quilos. Revise depoimentos (confirme).
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#40583F; --accent:#C9893D; --paper:#F3F1E9;
+  --font-display:"Fraunces",Georgia,serif;
+  --font-text:"Nunito Sans",system-ui,sans-serif;
+  --brand-soft:#E5EBE2; --surface:#FBFAF5; --ink:#23291F; --ink-2:#5A6152;
+  --hairline:rgba(35,41,31,0.10); --font-mono:ui-monospace,monospace; --r:20px; --r-lg:26px;
+  --shadow:0 24px 50px -28px rgba(64,88,63,0.40),0 8px 20px -16px rgba(35,41,31,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-text);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-image:radial-gradient(60% 40% at 50% -5%,rgba(64,88,63,0.08),transparent 70%);background-attachment:fixed;}
+.wrap{width:100%;max-width:860px;margin:0 auto;padding:0 24px;}
+section{position:relative;z-index:1;}
+.eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand);display:inline-flex;align-items:center;gap:9px;}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--accent);}
+h2.title{font-family:var(--font-display);font-weight:600;font-size:clamp(27px,5.4vw,40px);letter-spacing:-0.01em;line-height:1.12;margin:14px 0 16px;}
+.lead{color:var(--ink-2);font-size:17px;max-width:42em;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;border-radius:999px;font-family:var(--font-text);font-weight:700;cursor:pointer;border:none;transition:transform 200ms,box-shadow 200ms,background 200ms;}
+.btn-primary{background:var(--brand);color:#fff;padding:13px 24px;min-height:48px;font-size:15px;box-shadow:0 14px 28px -12px rgba(64,88,63,0.55);}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-lg{padding:18px 34px;font-size:17px;min-height:58px;}
+.btn-ghost{background:var(--surface);border:1px solid var(--hairline);color:var(--ink);padding:13px 24px;}
+
+.nav{position:sticky;top:0;z-index:100;background:rgba(243,241,233,0.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--hairline);}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;}
+.nav .bm{font-family:var(--font-display);font-weight:600;font-size:18px;}
+.nav .bm span{color:var(--brand);}
+.nav .btn-primary{padding:10px 20px;min-height:42px;font-size:14px;}
+
+.hero{padding:70px 0 54px;text-align:center;}
+.hero h1{font-family:var(--font-display);font-weight:600;font-size:clamp(35px,6.6vw,58px);line-height:1.06;letter-spacing:-0.01em;margin:20px auto 18px;max-width:15em;}
+.hero h1 em{font-style:italic;color:var(--brand);}
+.hero .lead{margin:0 auto 30px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+.trust{display:flex;gap:22px;flex-wrap:wrap;justify-content:center;margin-top:28px;color:var(--ink-2);font-size:13px;}
+.trust span{display:inline-flex;align-items:center;gap:7px;}
+.trust svg{width:16px;height:16px;color:var(--brand);}
+
+.block{padding:52px 0;}
+.block.alt{background:var(--brand-soft);}
+.center{text-align:center;}
+.center .lead{margin-left:auto;margin-right:auto;}
+.pain-list{display:grid;gap:12px;max-width:40em;margin:24px auto 0;}
+.pain{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r);padding:16px 18px;font-size:15.5px;}
+.pain svg{width:20px;height:20px;color:var(--accent);flex:0 0 auto;margin-top:2px;}
+
+.modules{display:grid;gap:16px;grid-template-columns:1fr;margin-top:28px;}
+@media(min-width:620px){.modules{grid-template-columns:1fr 1fr;}}
+.module{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:26px 24px;}
+.module .n{font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;color:var(--brand);}
+.module h3{font-family:var(--font-display);font-weight:600;font-size:20px;margin:8px 0 6px;}
+.module p{font-size:14.5px;color:var(--ink-2);}
+
+.testi{display:grid;gap:16px;grid-template-columns:1fr;margin-top:28px;}
+@media(min-width:680px){.testi{grid-template-columns:1fr 1fr;}}
+.t-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:26px 24px;}
+.t-card p{font-size:15.5px;margin-bottom:16px;}
+.t-card .who{display:flex;align-items:center;gap:12px;}
+.t-card .av{width:42px;height:42px;border-radius:46% 54% 52% 48%/52% 46% 54% 48%;background:var(--brand);color:#fff;display:grid;place-items:center;font-family:var(--font-display);font-weight:600;}
+.t-card .who strong{display:block;font-size:14px;}
+.t-card .who span{font-size:12px;color:var(--ink-2);}
+
+.bonus{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px dashed var(--accent);border-radius:var(--r-lg);padding:22px 24px;max-width:44em;margin:24px auto 0;}
+.bonus .ic{width:48px;height:48px;flex:0 0 auto;border-radius:14px;background:rgba(201,137,61,0.14);color:var(--accent);display:grid;place-items:center;}
+.bonus h3{font-family:var(--font-display);font-weight:600;font-size:19px;margin-bottom:4px;}
+.bonus p{font-size:14.5px;color:var(--ink-2);}
+
+.guarantee{display:flex;gap:18px;align-items:center;background:var(--brand);color:#fff;border-radius:var(--r-lg);padding:30px 28px;max-width:46em;margin:0 auto;box-shadow:var(--shadow);}
+.guarantee .seal{width:64px;height:64px;flex:0 0 auto;border-radius:999px;border:2px solid rgba(255,255,255,0.5);display:grid;place-items:center;}
+.guarantee .seal svg{width:30px;height:30px;}
+.guarantee h3{font-family:var(--font-display);font-weight:600;font-size:21px;margin-bottom:4px;}
+.guarantee p{font-size:14.5px;color:rgba(255,255,255,0.82);}
+
+.price-card{max-width:440px;margin:28px auto 0;background:var(--surface);border:1px solid var(--hairline);border-radius:28px;padding:38px 32px;text-align:center;box-shadow:var(--shadow);}
+.price-card .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:var(--accent);}
+.price-card .from{color:var(--ink-2);text-decoration:line-through;font-size:16px;margin-top:14px;}
+.price-card .now{font-family:var(--font-display);font-weight:600;font-size:52px;line-height:1;margin:4px 0;}
+.price-card .now small{font-size:20px;color:var(--ink-2);}
+.price-card .install{color:var(--ink-2);font-size:14px;margin-bottom:24px;}
+.price-card .btn{width:100%;}
+.price-card .reassure{font-size:12.5px;color:var(--ink-2);margin-top:14px;}
+
+.faq{max-width:46em;margin:28px auto 0;}
+details{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r);margin-bottom:10px;overflow:hidden;}
+summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:700;font-size:15.5px;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";font-family:var(--font-display);font-size:22px;color:var(--brand);transition:transform 200ms;}
+details[open] summary::after{transform:rotate(45deg);}
+details p{padding:0 20px 18px;color:var(--ink-2);font-size:14.5px;}
+
+.final{padding:58px 0 30px;text-align:center;}
+footer{padding:40px 0 60px;text-align:center;border-top:1px solid var(--hairline);margin-top:28px;}
+footer .crn{font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-2);}
+footer .disc{font-size:12px;color:var(--ink-2);max-width:40em;margin:12px auto 0;opacity:0.85;}
+
+.about{display:flex;gap:26px;align-items:center;flex-wrap:wrap;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px;max-width:48em;margin:0 auto;box-shadow:var(--shadow);}
+.about img{width:152px;height:188px;object-fit:cover;border-radius:46% 54% 52% 48%/52% 46% 54% 48%;flex:0 0 auto;}
+.about .ab-body{flex:1;min-width:240px;}
+.about .role{font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand);margin-bottom:8px;}
+.about h3{font-family:var(--font-display);font-weight:600;font-size:24px;letter-spacing:-0.01em;margin-bottom:8px;}
+.about p{font-size:15px;color:var(--ink-2);}
+@media(prefers-reduced-motion:no-preference){.reveal{opacity:0;transform:translateY(16px);animation:rise 720ms cubic-bezier(.2,.7,.2,1) forwards;}@keyframes rise{to{opacity:1;transform:none;}}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap"><div class="bm">Método <span>Sem Dieta</span></div><a class="btn btn-primary" href="#comprar">Quero entrar</a></div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <span class="eyebrow reveal" style="animation-delay:40ms">Programa online · 6 semanas</span> <!-- [TROCAR] -->
+    <h1 class="reveal" style="animation-delay:120ms">Você não falhou em 11 dietas. As <em>dietas</em> falharam com você.</h1> <!-- [TROCAR] -->
+    <p class="lead reveal" style="animation-delay:200ms">O Método Sem Dieta é um programa de reeducação comportamental pra você parar o ciclo de restrição-e-compulsão e construir uma relação tranquila com a comida. No seu ritmo, sem cardápio de fome.</p>
+    <div class="hero-actions reveal" style="animation-delay:280ms">
+      <a class="btn btn-primary btn-lg" href="#comprar">Quero entrar</a>
+      <a class="btn btn-ghost btn-lg" href="#conteudo">Ver o conteúdo</a>
+    </div>
+    <div class="trust reveal" style="animation-delay:340ms">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m4 12 5 5L20 6"/></svg> Acesso vitalício</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 8 8 8 8s8-3 8-8V6Z"/></svg> 7 dias de garantia</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Pagamento seguro</span>
+    </div>
+  </section>
+
+  <section class="block center"> <!-- DOR (PAS) -->  <!-- [TROCAR] -->
+    <span class="eyebrow">Talvez você se reconheça</span>
+    <h2 class="title">Segunda você começa firme. Quarta você já desistiu — e se culpa o fim de semana inteiro.</h2>
+    <p class="lead">Esse ciclo não é falta de disciplina. É o efeito de anos de regras impossíveis. Cada dieta nova deixa você um pouco mais brava com seu próprio corpo.</p>
+    <div class="pain-list">
+      <div class="pain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg> Você sabe exatamente o que "deveria" comer — e mesmo assim não consegue.</div>
+      <div class="pain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg> Come escondida e depois vem a vergonha.</div>
+      <div class="pain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg> "Domingo eu recomeço" virou um looping que nunca termina.</div>
+      <div class="pain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg> No fundo você só queria comer em paz, sem pensar nisso o dia todo.</div>
+    </div>
+  </section>
+
+  <section class="block alt center"> <!-- SOLUÇÃO --> <!-- [TROCAR] -->
+    <span class="eyebrow">A virada</span>
+    <h2 class="title">E se a meta não fosse "fechar a boca" — e sim entender por que ela abre?</h2>
+    <p class="lead">No Método Sem Dieta a gente trabalha o comportamento por trás do comer: fome emocional, gatilhos, o tudo-ou-nada. Em vez de mais uma lista de proibições, você sai com autonomia pra decidir. É educação pra uma vida — não um detox de 30 dias.</p>
+  </section>
+
+  <section class="block"> <!-- SOBRE / AUTORIDADE --> <!-- [TROCAR] -->
+    <div class="center"><span class="eyebrow">Quem vai te guiar</span><h2 class="title">Oi, eu sou a Cami</h2></div>
+    <div class="about reveal">
+      <img src="cami-profile.png" alt="Cami Brandão, nutricionista comportamental">
+      <div class="ab-body">
+        <div class="role">CRN-3 00000 · Nutri comportamental</div>
+        <h3>Nutrição sem dieta e sem culpa</h3>
+        <p>Há anos ajudo mulheres a saírem do ciclo de restrição-e-compulsão e a comerem em paz. Aqui não tem proibição nem cardápio de sofrimento — tem entender o que acontece com você e construir autonomia, no seu tempo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="conteudo"> <!-- O QUE RECEBE --> <!-- [TROCAR] -->
+    <div class="center"><span class="eyebrow">O que você recebe</span><h2 class="title">6 semanas pra sair do piloto automático</h2></div>
+    <div class="modules">
+      <div class="module"><span class="n">SEMANA 01</span><h3>Saindo da dieta</h3><p>Por que restringir engorda o problema — e como soltar sem se sabotar.</p></div>
+      <div class="module"><span class="n">SEMANA 02</span><h3>Fome real x fome emocional</h3><p>Reconhecer o que dispara o comer quando não é o estômago.</p></div>
+      <div class="module"><span class="n">SEMANA 03</span><h3>O prato sem regra rígida</h3><p>Montar refeições que saciam de verdade, sem contar caloria.</p></div>
+      <div class="module"><span class="n">SEMANA 04</span><h3>Quebrando o tudo-ou-nada</h3><p>O que fazer no "já que estraguei" pra não virar a semana inteira.</p></div>
+      <div class="module"><span class="n">SEMANA 05</span><h3>Comer social sem pânico</h3><p>Festa, rodízio, viagem: como participar sem culpa nem descontrole.</p></div>
+      <div class="module"><span class="n">SEMANA 06</span><h3>Mantendo sozinha</h3><p>Seu plano de autonomia pra quando a vida apertar.</p></div>
+    </div>
+  </section>
+
+  <section class="block alt"> <!-- PROVA --> <!-- [TROCAR] (confirme se reais) -->
+    <div class="center"><span class="eyebrow">Quem já fez</span><h2 class="title">Histórias de quem largou o ciclo</h2></div>
+    <div class="testi">
+      <div class="t-card"><p>“Não perco mais o domingo me culpando. Como uma fatia de bolo e sigo a vida.” <em>(confirme se é real)</em></p><div class="who"><div class="av">J</div><div><strong>Joana, 34</strong><span>Aluna do programa</span></div></div></div>
+      <div class="t-card"><p>“Eu vivia de dieta. Hoje eu como sem aquela voz me julgando o tempo todo.” <em>(confirme se é real)</em></p><div class="who"><div class="av">P</div><div><strong>Paula, 41</strong><span>Aluna do programa</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="block"> <!-- BÔNUS --> <!-- [TROCAR] -->
+    <div class="center"><span class="eyebrow">Bônus de entrada</span><h2 class="title">Quem entra agora leva junto</h2></div>
+    <div class="bonus">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 7H4v13h16Z"/><path d="M12 7V4M8 4h8"/></svg></div>
+      <div><h3>Caderno de gatilhos (PDF)</h3><p>Um diário guiado pra mapear seus disparadores na primeira semana e acelerar a virada.</p></div>
+    </div>
+  </section>
+
+  <section class="block center"> <!-- GARANTIA --> <!-- [TROCAR] -->
+    <div class="guarantee">
+      <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 8 8 8 8s8-3 8-8V6Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+      <div style="text-align:left"><h3>7 dias por minha conta</h3><p>Entra, assiste a primeira semana, sente. Se não for pra você, devolvo 100% — é só me escrever.</p></div>
+    </div>
+  </section>
+
+  <section class="block alt center" id="comprar"> <!-- PREÇO --> <!-- [TROCAR] -->
+    <span class="eyebrow">Pra começar</span>
+    <h2 class="title">Sua paz com a comida vale mais que a próxima dieta</h2>
+    <div class="price-card">
+      <span class="tag">Turma de junho · poucas vagas</span>
+      <div class="from">de R$ 697</div>
+      <div class="now"><small>R$</small> 397</div>
+      <div class="install">ou 12× de R$ 39,70</div>
+      <a class="btn btn-primary btn-lg" href="#checkout">Garantir minha vaga</a>
+      <p class="reassure">Pagamento seguro · Acesso imediato · 7 dias de garantia</p>
+    </div>
+  </section>
+
+  <section class="block"> <!-- FAQ --> <!-- [TROCAR] -->
+    <div class="center"><span class="eyebrow">Ainda na dúvida?</span><h2 class="title">Perguntas que sempre me fazem</h2></div>
+    <div class="faq">
+      <details><summary>Isso substitui consulta com nutricionista?</summary><p>Não. O programa é educativo e não substitui acompanhamento individual nem prescrição. Ele te dá ferramentas pra decidir melhor no dia a dia.</p></details>
+      <details><summary>Vou emagrecer?</summary><p>Não trabalho com promessa de peso. O foco é parar o ciclo de dieta e culpa e ter uma relação tranquila com a comida. Cada pessoa responde de um jeito.</p></details>
+      <details><summary>Não tenho tempo, dá conta?</summary><p>As aulas são curtas e ficam gravadas. Você assiste no seu ritmo, com acesso vitalício.</p></details>
+      <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia incondicional. Pediu nesse prazo, devolvo tudo.</p></details>
+    </div>
+  </section>
+
+  <section class="final">
+    <h2 class="title">Bora parar de recomeçar toda segunda?</h2>
+    <a class="btn btn-primary btn-lg" href="#comprar">Quero entrar no Método</a>
+  </section>
+
+  <footer>
+    <div class="crn">Cami Brandão · CRN-3 00000 · Nutrição comportamental</div>
+    <p class="disc">Conteúdo educativo. Não substitui consulta, diagnóstico ou tratamento individualizado com profissional habilitado. Resultados variam de pessoa para pessoa.</p>
+  </footer>
+</div>
+</body>
+</html>

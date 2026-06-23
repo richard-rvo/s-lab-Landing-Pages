@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Helena Vasco · Nutrição funcional feminina</title>
+<meta name="description" content="Nutrição clínica funcional — saúde hormonal e metabólica feminina. Agende com a Dra. Helena Vasco.">
+
+<!--
+  IDENTIDADE 2 · TERRACOTA — SITE: LINK NA BIO
+  Persona: Dra. Helena Vasco (hormonal feminina, editorial premium).
+  Troque [TROCAR] no :root e os textos. Foto: retrato-helena.jpg ao lado.
+  Prompt de IA: prompts-regeneracao.txt nesta pasta.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#B5654A; --accent:#3E5641; --paper:#F6F2EC;
+  --font-display:"DM Serif Display",Georgia,serif;
+  --font-text:"Inter",system-ui,sans-serif;
+  --brand-soft:#C77E64; --paper-2:#EDE7DD; --ink:#2A2622; --ink-2:#5C554E;
+  --hairline:rgba(42,38,34,0.10); --font-mono:ui-monospace,monospace;
+  --shadow:0 24px 60px -28px rgba(181,101,74,0.40),0 8px 24px -16px rgba(42,38,34,0.12);
+  --r:22px; --r-link:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-text);color:var(--ink);background:var(--paper);min-height:100dvh;line-height:1.5;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;
+  background-image:radial-gradient(60% 50% at 80% -5%,rgba(181,101,74,0.07),transparent 70%),radial-gradient(55% 45% at -10% 25%,rgba(181,101,74,0.06),transparent 70%);background-attachment:fixed;}
+.shell{width:100%;max-width:480px;padding:clamp(28px,7vw,52px) clamp(20px,6vw,36px) 40px;}
+.portrait{position:relative;width:clamp(132px,42vw,168px);aspect-ratio:3/3.4;margin:0 auto 26px;border-radius:999px 999px 26px 26px;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,var(--brand-soft),var(--brand) 70%);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.5);}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.portrait .mono{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--font-display);font-size:74px;color:var(--paper);opacity:.92;transform:translateY(6px);}
+.identity{text-align:center;}
+.name{font-family:var(--font-display);font-size:clamp(34px,9.5vw,44px);line-height:1.02;letter-spacing:-0.015em;margin-bottom:12px;}
+.cred{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--brand);display:inline-flex;align-items:center;gap:9px;margin-bottom:18px;}
+.cred::before,.cred::after{content:"";width:16px;height:1px;background:var(--hairline);}
+.bio{font-style:italic;font-size:15.5px;line-height:1.55;color:var(--ink-2);max-width:22em;margin:0 auto 34px;}
+.bio b{font-style:normal;font-weight:600;color:var(--brand);}
+.links{display:flex;flex-direction:column;gap:11px;}
+.link{display:flex;align-items:center;gap:14px;min-height:56px;padding:0 20px;border-radius:var(--r-link);text-decoration:none;font-size:15.5px;font-weight:500;letter-spacing:-0.005em;transition:transform 220ms cubic-bezier(.2,.7,.2,1),box-shadow 220ms,background 220ms,border-color 220ms;}
+.link svg{width:19px;height:19px;flex:0 0 auto;stroke-width:1.6;}
+.link .lb{flex:1;}
+.link .ar{opacity:.45;transition:transform 220ms,opacity 220ms;}
+.link:hover{transform:translateY(-2px);}
+.link:hover .ar{transform:translateX(3px);opacity:.8;}
+.link.primary{background:var(--brand);color:var(--paper);box-shadow:0 14px 30px -14px rgba(181,101,74,0.65);}
+.link.ghost{background:rgba(255,255,255,0.55);border:1px solid var(--hairline);color:var(--ink);}
+.link.ghost:hover{background:rgba(255,255,255,0.9);border-color:rgba(181,101,74,0.25);}
+.offer{margin:26px 0 8px;padding:22px;border-radius:var(--r);background:var(--paper-2);border:1px solid var(--hairline);position:relative;overflow:hidden;}
+.offer::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent);}
+.offer .tag{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;display:block;}
+.offer h2{font-family:var(--font-display);font-size:21px;line-height:1.25;margin-bottom:6px;}
+.offer p{font-size:13.5px;color:var(--ink-2);margin-bottom:14px;}
+.offer a{font-size:13.5px;font-weight:600;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;}
+.offer a:hover{gap:9px;}
+.social{display:flex;justify-content:center;gap:8px;margin:30px 0 22px;}
+.social a{width:42px;height:42px;display:grid;place-items:center;border-radius:999px;color:var(--ink-2);border:1px solid var(--hairline);background:rgba(255,255,255,0.4);transition:color 200ms,border-color 200ms,transform 200ms,background 200ms;}
+.social a:hover{color:var(--brand);border-color:rgba(181,101,74,0.3);transform:translateY(-2px);background:rgba(255,255,255,0.9);}
+.social svg{width:18px;height:18px;stroke-width:1.6;}
+footer{text-align:center;font-family:var(--font-mono);font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-2);opacity:0.55;}
+@media(prefers-reduced-motion:no-preference){.reveal{opacity:0;transform:translateY(14px);animation:rise 720ms cubic-bezier(.2,.7,.2,1) forwards;}@keyframes rise{to{opacity:1;transform:none;}}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <div class="portrait reveal" style="animation-delay:40ms">
+    <img src="drahelena-profile.png" alt="Dra. Helena Vasco, nutricionista clínica funcional" onerror="this.style.display='none'">
+    <div class="mono" aria-hidden="true">H</div>
+  </div>
+  <div class="identity">
+    <h1 class="name reveal" style="animation-delay:120ms">Dra. Helena Vasco</h1> <!-- [TROCAR] -->
+    <p class="cred reveal" style="animation-delay:180ms">CRN-3 00000 · Nutrição funcional</p> <!-- [TROCAR] -->
+    <p class="bio reveal" style="animation-delay:240ms">Saúde hormonal feminina com olhar de detetive: <b>investigo a raiz</b>, não silencio o sintoma. Poucos casos por vez, pra ir a fundo no seu.</p> <!-- [TROCAR] -->
+  </div>
+  <nav class="links" aria-label="Links principais"> <!-- [TROCAR] -->
+    <a class="link primary reveal" style="animation-delay:300ms" href="#agendar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      <span class="lb">Agendar consulta</span><span class="ar">→</span>
+    </a>
+    <a class="link ghost reveal" style="animation-delay:360ms" href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Helena%2C%20gostaria%20de%20entender%20como%20funciona%20o%20acompanhamento">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.2-5.3A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+      <span class="lb">WhatsApp</span><span class="ar">→</span>
+    </a>
+    <a class="link ghost reveal" style="animation-delay:420ms" href="#materiais">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h10l6 6v10H4Z"/><path d="M14 4v6h6"/></svg>
+      <span class="lb">Guia: hormônios e cansaço</span><span class="ar">→</span>
+    </a>
+    <a class="link ghost reveal" style="animation-delay:480ms" href="https://instagram.com/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      <span class="lb">Instagram</span><span class="ar">→</span>
+    </a>
+    <a class="link ghost reveal" style="animation-delay:540ms" href="#blog">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 5h16M4 12h16M4 19h10"/></svg>
+      <span class="lb">Artigos &amp; estudos</span><span class="ar">→</span>
+    </a>
+  </nav>
+  <section class="offer reveal" style="animation-delay:600ms" aria-label="Oferta atual"> <!-- [TROCAR] -->
+    <span class="tag">Agenda de junho</span>
+    <h2>6 novos casos por mês — para investigar com profundidade</h2>
+    <p>Trabalho com poucas pacientes por vez. As vagas do mês costumam fechar rápido.</p>
+    <a href="#agendar">Reservar avaliação <span aria-hidden="true">→</span></a>
+  </section>
+  <div class="social reveal" style="animation-delay:660ms"> <!-- [TROCAR] -->
+    <a href="https://instagram.com/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="mailto:contato@helenavasco.com.br" aria-label="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+    <a href="https://wa.me/5500000000000" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.2-5.3A8.5 8.5 0 1 1 21 11.5Z"/></svg></a>
+  </div>
+  <footer class="reveal" style="animation-delay:720ms">Dra. Helena Vasco · CRN-3 00000</footer>
+</main>
+</body>
+</html>

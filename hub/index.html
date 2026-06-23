@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-LAB · Galeria de Landing Pages para Nutris</title>
+<meta name="description" content="3 identidades visuais de nutricionista, cada uma com link na bio, WhatsApp e página de vendas. Baixe o HTML ou copie o prompt.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --orange-50:#FFF4E8;--orange-100:#FDE3C7;--orange-300:#F8A23B;--orange-500:#F08113;--orange-600:#E94D1D;--orange-700:#C13A12;
+  --brand-grad:linear-gradient(135deg,#F8A23B 0%,#F08113 48%,#E94D1D 100%);
+  --paper:#FAF7F2;--paper-2:#F2EEE7;--hairline:rgba(26,22,20,0.08);--hairline-strong:rgba(26,22,20,0.14);
+  --ink:#1A1614;--ink-2:#423B36;--stone:#87807A;--mist:#B8B1AB;
+  --font-display:"Plus Jakarta Sans",-apple-system,system-ui,sans-serif;--font-text:"Lora",Georgia,serif;--font-mono:"JetBrains Mono",ui-monospace,monospace;
+  --glass-shadow:0 30px 60px -20px rgba(170,90,40,0.18),0 12px 24px -16px rgba(26,22,20,0.16);
+  --shadow-cta:0 12px 24px -8px rgba(233,77,29,0.50),inset 0 1px 0 rgba(255,255,255,0.30);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-display);background:var(--paper);color:var(--ink);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+.ambient{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.ambient::before{content:"";position:absolute;width:900px;height:900px;background:radial-gradient(circle,rgba(240,129,19,0.24),transparent 70%);filter:blur(150px);border-radius:50%;top:-320px;right:-280px;animation:driftA 14s ease-in-out infinite alternate;}
+.ambient::after{content:"";position:absolute;width:820px;height:820px;background:radial-gradient(circle,rgba(233,77,29,0.14),transparent 70%);filter:blur(150px);border-radius:50%;top:62%;left:-320px;animation:driftB 18s ease-in-out infinite alternate;}
+@keyframes driftA{from{transform:translate(0,0) scale(1);}to{transform:translate(-80px,60px) scale(1.1);}}
+@keyframes driftB{from{transform:translate(0,0) scale(1);}to{transform:translate(60px,-80px) scale(1.08);}}
+
+nav{position:sticky;top:16px;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;max-width:1200px;margin:16px auto 0;padding:12px 22px;background:rgba(250,247,242,0.72);backdrop-filter:blur(28px) saturate(140%);-webkit-backdrop-filter:blur(28px) saturate(140%);border:1px solid rgba(255,255,255,0.85);border-radius:999px;box-shadow:var(--glass-shadow);}
+.nav-logo{justify-self:start;font-weight:800;font-size:18px;letter-spacing:-0.02em;}
+.nav-logo b{background:var(--brand-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-mid{justify-self:center;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--stone);}
+.nav-badge{font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange-600);padding:6px 14px;border-radius:999px;background:var(--orange-50);border:1px solid var(--orange-100);justify-self:end;}
+
+.container{max-width:1200px;margin:0 auto;padding:0 28px;position:relative;z-index:1;}
+.hero{padding:88px 0 30px;text-align:center;}
+.hero .eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange-600);display:inline-flex;align-items:center;gap:10px;margin-bottom:24px;}
+.hero .eyebrow::before,.hero .eyebrow::after{content:"";width:18px;height:1px;background:var(--orange-500);}
+.hero h1{font-size:clamp(38px,6.4vw,68px);font-weight:800;letter-spacing:-0.045em;line-height:0.96;margin-bottom:22px;}
+.hero h1 .grad{background:var(--brand-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero p{font-family:var(--font-text);font-style:italic;font-size:clamp(16px,2.4vw,19px);line-height:1.55;color:var(--ink-2);max-width:580px;margin:0 auto;}
+.how{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:30px;}
+.how .chip{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:600;color:var(--ink-2);}
+.how .chip b{font-family:var(--font-mono);font-weight:600;color:var(--orange-600);}
+
+/* ===== Painel-marca (cada identidade respira a própria cor) ===== */
+.panels{margin-top:46px;display:flex;flex-direction:column;gap:30px;}
+.panel{
+  --tint: color-mix(in srgb, var(--p-brand) 9%, var(--p-paper));
+  position:relative;border-radius:34px;padding:clamp(24px,4vw,40px);overflow:hidden;
+  background:linear-gradient(165deg, color-mix(in srgb,var(--p-paper) 80%,#fff), var(--tint));
+  border:1px solid color-mix(in srgb,var(--p-brand) 14%, transparent);
+  box-shadow:0 30px 70px -34px color-mix(in srgb,var(--p-brand) 60%, transparent), 0 10px 24px -18px rgba(26,22,20,0.18);
+}
+.panel::before{content:"";position:absolute;width:520px;height:520px;right:-200px;top:-220px;border-radius:50%;
+  background:radial-gradient(circle, color-mix(in srgb,var(--p-brand) 22%, transparent), transparent 68%);
+  filter:blur(40px);pointer-events:none;}
+.panel::after{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--p-brand);opacity:.9;}
+
+.bp-head{position:relative;display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:26px;}
+.bp-photo{width:96px;height:116px;object-fit:cover;border-radius:var(--p-rad);flex:0 0 auto;
+  box-shadow:0 16px 30px -14px color-mix(in srgb,var(--p-brand) 70%,transparent);border:3px solid rgba(255,255,255,0.85);}
+.bp-meta{flex:1;min-width:240px;}
+.bp-name{display:flex;align-items:center;gap:11px;font-size:clamp(22px,3vw,28px);font-weight:800;letter-spacing:-0.025em;color:var(--p-ink);}
+.bp-name .dot{width:13px;height:13px;border-radius:50%;background:var(--p-brand);box-shadow:0 0 0 4px color-mix(in srgb,var(--p-brand) 20%,transparent);}
+.bp-role{font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb,var(--p-ink) 55%,var(--p-brand));margin:7px 0 12px;}
+.bp-quote{font-family:var(--font-text);font-style:italic;font-size:clamp(17px,2.2vw,23px);line-height:1.4;color:var(--p-ink);max-width:30em;}
+.bp-swatches{position:absolute;top:2px;right:2px;display:flex;gap:6px;}
+.bp-swatches span{width:22px;height:22px;border-radius:7px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.08);}
+@media(max-width:560px){.bp-swatches{display:none;}}
+
+/* ===== Tiles dos 3 sites ===== */
+.bp-sites{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:760px){.bp-sites{grid-template-columns:1fr;}}
+.tile{position:relative;display:flex;flex-direction:column;border-radius:22px;padding:22px 20px 18px;
+  background:rgba(255,255,255,0.62);backdrop-filter:blur(10px);
+  border:1px solid color-mix(in srgb,var(--p-brand) 16%, transparent);
+  transition:transform 240ms cubic-bezier(.2,.7,.2,1),box-shadow 240ms,border-color 240ms,background 240ms;}
+.tile:hover{transform:translateY(-5px);background:rgba(255,255,255,0.82);
+  border-color:color-mix(in srgb,var(--p-brand) 40%, transparent);
+  box-shadow:0 26px 50px -22px color-mix(in srgb,var(--p-brand) 60%, transparent);}
+.tile-open{position:absolute;inset:0;z-index:1;border-radius:22px;}
+.tile-open::after{content:"";position:absolute;inset:0;}
+.tile-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.tile-ic{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;color:var(--p-brand);
+  background:color-mix(in srgb,var(--p-brand) 13%, #fff);}
+.tile-ic svg{width:22px;height:22px;}
+.tile-idx{font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;color:color-mix(in srgb,var(--p-ink) 45%,transparent);}
+.tile h4{font-size:18px;font-weight:800;letter-spacing:-0.02em;color:var(--p-ink);margin-bottom:5px;}
+.tile p{font-family:var(--font-text);font-size:13px;line-height:1.45;color:color-mix(in srgb,var(--p-ink) 70%,transparent);margin-bottom:16px;flex:1;}
+.tile-go{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:var(--p-brand);}
+.tile-go svg{width:15px;height:15px;transition:transform 220ms;}
+.tile:hover .tile-go svg{transform:translate(2px,-2px);}
+.tile-actions{position:relative;z-index:2;display:flex;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid color-mix(in srgb,var(--p-brand) 12%, transparent);}
+.mini{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-display);font-weight:600;font-size:12px;cursor:pointer;text-decoration:none;
+  padding:8px 12px;border-radius:999px;border:1px solid color-mix(in srgb,var(--p-brand) 22%, transparent);
+  background:transparent;color:color-mix(in srgb,var(--p-ink) 78%,var(--p-brand));transition:background 200ms,border-color 200ms,color 200ms;}
+.mini svg{width:14px;height:14px;}
+.mini:hover{background:color-mix(in srgb,var(--p-brand) 12%, transparent);border-color:color-mix(in srgb,var(--p-brand) 40%, transparent);color:var(--p-brand);}
+.mini.copied{background:var(--p-brand);border-color:var(--p-brand);color:#fff;}
+
+footer{position:relative;z-index:1;background:linear-gradient(160deg,#2A211B,#1A1614);padding:60px 32px;text-align:center;margin-top:60px;}
+footer .flogo{font-weight:800;font-size:22px;color:var(--paper);margin-bottom:10px;}
+footer .flogo b{background:var(--brand-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+footer p{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(250,247,242,0.4);}
+
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--paper);padding:13px 22px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity 220ms,transform 220ms;z-index:200;box-shadow:var(--glass-shadow);}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+@media(prefers-reduced-motion:no-preference){.reveal{opacity:0;transform:translateY(20px);animation:rise 760ms cubic-bezier(.2,.7,.2,1) forwards;}@keyframes rise{to{opacity:1;transform:none;}}}
+@media(max-width:640px){.container{padding:0 18px;}}
+</style>
+</head>
+<body>
+<div class="ambient"></div>
+
+<nav class="reveal">
+  <div class="nav-logo">S<b>-</b>LAB</div>
+  <div class="nav-mid">Galeria de Landing Pages</div>
+  <span class="nav-badge">3 identidades · 9 sites</span>
+</nav>
+
+<div class="container">
+  <header class="hero">
+    <div class="eyebrow reveal">IA na Prática · RV 2026</div>
+    <h1 class="reveal" style="animation-delay:80ms">Uma identidade.<br>O <span class="grad">funil inteiro</span> no ar.</h1>
+    <p class="reveal" style="animation-delay:160ms">Escolha a cara da sua marca. Cada identidade entrega os 3 sites do funil — link na bio, WhatsApp e página de vendas — com a mesma estética e a mesma voz. Baixe o HTML ou copie o prompt e personalize com IA.</p>
+    <div class="how reveal" style="animation-delay:240ms">
+      <span class="chip"><b>01</b> Escolha a identidade</span>
+      <span class="chip"><b>02</b> Baixe ou personalize</span>
+      <span class="chip"><b>03</b> Suba no Netlify</span>
+    </div>
+  </header>
+
+  <main class="panels" id="panels"></main>
+</div>
+
+<footer>
+  <div class="flogo">S<b>-</b>LAB</div>
+  <p>Identidades novas toda semana · feito com IA na Prática</p>
+</footer>
+
+<div id="toast">Prompt copiado ✓</div>
+
+<!-- ===== Prompts de DESIGN por identidade ===== -->
+<script type="text/plain" id="design-verde">IDENTIDADE VERDE HERBAL (natural/funcional/leve). Single-file HTML autocontido (CSS inline, SVG inline, Google Fonts). Fundo verde-creme #F3F1E9 (nunca branco puro), marca sage #40583F, acento mel #C9893D (~5%). Tipografia Fraunces (títulos) + Nunito Sans (texto). UX orgânica e arredondada (20–28px), traços de folha, muito respiro. Movimento único: reveal no load. Tokenize no :root (--brand,--accent,--paper,--font-display,--font-text). VOZ: calorosa, 2ª pessoa, tom de amiga, anti-dieta, tira a culpa da paciente. SAÚDE: sem promessa de cura/quilos, CRN sempre visível.</script>
+<script type="text/plain" id="design-terracota">IDENTIDADE TERRACOTA (feminino/premium/acolhedor). Single-file HTML autocontido (CSS inline, SVG inline, Google Fonts). Fundo marfim #F6F2EC (nunca branco puro), marca terracota #B5654A, acento sage #3E5641 (~5%). Tipografia DM Serif Display (títulos editoriais) + Inter (texto), citações em itálico. UX editorial revista, arcos, raios refinados (~22px), 1 sombra quente, muito respiro. Movimento único: reveal no load. Tokenize no :root (--brand,--accent,--paper,--font-display,--font-text). VOZ: científica-mas-humana, autoridade serena, investigativa ("investigar a raiz, não silenciar o sintoma"). SAÚDE: sem promessa de cura/quilos, CRN sempre visível.</script>
+<script type="text/plain" id="design-azul">IDENTIDADE AZUL CLÍNICO (científico/confiança/dados). Single-file HTML autocontido (CSS inline, SVG inline, Google Fonts). Fundo cinza-azulado #F1F4F5 (nunca branco puro), marca azul-petróleo #2C6E7F, acento âmbar #DDA15E (~5%). Tipografia Archivo (títulos 700–800, letter-spacing negativo) + IBM Plex Sans (texto). UX clínica estruturada em grid, faixa de dados (3 stats), cantos mais retos (12–18px). Movimento único: reveal no load. Tokenize no :root (--brand,--accent,--paper,--font-display,--font-text). VOZ: precisa, baseada em dados e especificidade, sem hype ("seu cansaço tem causa — e aparece nos exames"). SAÚDE: educativo e NÃO diagnóstico, sem promessa de cura/quilos, CRN sempre visível.</script>
+
+<!-- ===== Prompts de ESTRUTURA por tipo de site ===== -->
+<script type="text/plain" id="struct-bio">SITE: LINK NA BIO. Mobile-first, cartão central até 480px. Estrutura: retrato (ou monograma) → nome → credencial mono → bio-assinatura (1–2 linhas) → 5 links empilhados (1 primário + 4 ghost, toque ≥56px, ícone+rótulo+seta) → card de oferta → ícones sociais → rodapé com CRN. Preencha com MEUS dados: nome, CRN, especialidade, bio, 5 links (com wa.me), oferta atual.</script>
+<script type="text/plain" id="struct-whatsapp">SITE: WHATSAPP (mono-CTA, tudo leva ao WhatsApp). Estrutura: hero (retrato + headline + sub + botão verde #25D366 + microcopy) → 3 benefícios → como funciona (3 passos) → nota pessoal com foto → CTA final em card destacado → FAB flutuante de WhatsApp → rodapé com CRN. Todos os botões: https://wa.me/55[NÚMERO]?text=[MENSAGEM]. Preencha com MEUS dados.</script>
+<script type="text/plain" id="struct-vendas">SITE: PÁGINA DE VENDAS (infoproduto, estrutura PAS). Coluna até 860px. Estrutura: nav+CTA → hero (headline + lead + 2 CTAs + selos) → DOR (4 itens na voz da paciente) → solução → seção "quem vai te guiar" com foto → o que recebe (5–6 módulos) → prova (2 depoimentos «confirme») → bônus → garantia (7 dias) → preço (de/por + parcelas) → FAQ em <details> (4, incl. "substitui consulta? Não") → CTA final → rodapé com CRN + disclaimer. Preencha com MEUS dados: produto, módulos, preço, checkout.</script>
+
+<script>
+const IDENTITIES = [
+  { id:"verde", name:"Verde Herbal", persona:"Cami Brandão · comportamental, anti-dieta",
+    voice:"“Você não falhou em 11 dietas. As dietas falharam com você.”",
+    folder:"../identidades/01-verde-herbal", designId:"design-verde", photo:"cami-profile.png",
+    paper:"#F3F1E9", brand:"#40583F", accent:"#C9893D", ink:"#23291F",
+    rad:"46% 54% 52% 48% / 52% 46% 54% 48%" },
+  { id:"terracota", name:"Terracota", persona:"Dra. Helena Vasco · hormonal feminina, premium",
+    voice:"“Investigar a raiz, não silenciar o sintoma.”",
+    folder:"../identidades/02-terracota", designId:"design-terracota", photo:"drahelena-profile.png",
+    paper:"#F6F2EC", brand:"#B5654A", accent:"#3E5641", ink:"#2A2622",
+    rad:"60px 60px 16px 16px" },
+  { id:"azul", name:"Azul Clínico", persona:"Dra. Marina Reis · clínica & esportiva, dados",
+    voice:"“Seu cansaço tem causa — e aparece nos seus exames.”",
+    folder:"../identidades/03-azul-clinico", designId:"design-azul", photo:"marina-profile.png",
+    paper:"#F1F4F5", brand:"#2C6E7F", accent:"#DDA15E", ink:"#16242A",
+    rad:"16px" },
+];
+const ICONS = {
+  bio:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>',
+  whatsapp:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.2-5.3A8.5 8.5 0 1 1 21 11.5Z"/></svg>',
+  vendas:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2 3 6v14a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg>',
+};
+const SITES = [
+  { id:"bio", file:"bio.html", label:"Link na bio", idx:"01", desc:"O link do Instagram: retrato, bio-assinatura e a pilha de links." },
+  { id:"whatsapp", file:"whatsapp.html", label:"WhatsApp", idx:"02", desc:"Uma rolagem curta, mono-CTA, que leva direto pra conversa." },
+  { id:"vendas", file:"vendas.html", label:"Página de vendas", idx:"03", desc:"Estrutura longa de conversão pra vender curso ou e-book." },
+];
+const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg>';
+
+const panels = document.getElementById("panels");
+let d = 0;
+IDENTITIES.forEach((idn) => {
+  const sec = document.createElement("section");
+  sec.className = "panel reveal";
+  sec.style.animationDelay = (d += 90) + "ms";
+  sec.style.cssText += `--p-paper:${idn.paper};--p-brand:${idn.brand};--p-accent:${idn.accent};--p-ink:${idn.ink};--p-rad:${idn.rad};`;
+  const tiles = SITES.map((s) => `
+    <article class="tile">
+      <a class="tile-open" href="${idn.folder}/${s.file}" target="_blank" rel="noopener" aria-label="Abrir ${s.label} — ${idn.name}"></a>
+      <div class="tile-top">
+        <div class="tile-ic">${ICONS[s.id]}</div>
+        <span class="tile-idx">${s.idx}</span>
+      </div>
+      <h4>${s.label}</h4>
+      <p>${s.desc}</p>
+      <span class="tile-go">Abrir página ${ARROW}</span>
+      <div class="tile-actions">
+        <a class="mini" href="${idn.folder}/${s.file}" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>Baixar
+        </a>
+        <button class="mini" data-design="${idn.designId}" data-struct="struct-${s.id}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Prompt
+        </button>
+      </div>
+    </article>`).join("");
+  sec.innerHTML = `
+    <div class="bp-head">
+      <img class="bp-photo" src="${idn.folder}/${idn.photo}" alt="${idn.persona}">
+      <div class="bp-meta">
+        <div class="bp-name"><span class="dot"></span>${idn.name}</div>
+        <div class="bp-role">${idn.persona}</div>
+        <div class="bp-quote">${idn.voice}</div>
+      </div>
+      <div class="bp-swatches">
+        <span style="background:${idn.brand}"></span>
+        <span style="background:${idn.accent}"></span>
+        <span style="background:${idn.paper}"></span>
+      </div>
+    </div>
+    <div class="bp-sites">${tiles}</div>`;
+  panels.appendChild(sec);
+});
+
+const toast = document.getElementById("toast");
+let toastTimer;
+function showToast(msg){ toast.textContent = msg; toast.classList.add("show"); clearTimeout(toastTimer); toastTimer=setTimeout(()=>toast.classList.remove("show"),2100); }
+
+panels.addEventListener("click", async (e) => {
+  const btn = e.target.closest("button[data-design]");
+  if(!btn) return;
+  e.preventDefault();
+  const design = document.getElementById(btn.dataset.design).textContent.trim();
+  const struct = document.getElementById(btn.dataset.struct).textContent.trim();
+  const text = design + "\n\n" + struct + "\n\nEntregue o HTML completo, pronto pra subir no Netlify.";
+  try{ await navigator.clipboard.writeText(text); }
+  catch{ const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove(); }
+  btn.classList.add("copied");
+  showToast("Prompt copiado ✓ — cole no Codex/ChatGPT");
+  setTimeout(()=>btn.classList.remove("copied"),1600);
+});
+</script>
+</body>
+</html>

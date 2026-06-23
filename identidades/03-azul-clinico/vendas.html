@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decifre Seus Exames · Dra. Marina Reis</title>
+<meta name="description" content="Programa online para entender seus exames e ajustar sua nutrição com base em dados. Com a Dra. Marina Reis.">
+
+<!--
+  IDENTIDADE 3 · AZUL CLÍNICO — SITE: PÁGINA DE VENDAS (infoproduto)
+  Persona: Dra. Marina Reis · Produto: Decifre Seus Exames.
+  Troque [TROCAR] e os href de compra (#comprar/#checkout).
+  ⚠️ Saúde: educativo, NÃO diagnóstico. Sem promessa de cura/quilos. Depoimentos (confirme).
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#2C6E7F; --accent:#DDA15E; --paper:#F1F4F5;
+  --font-display:"Archivo",system-ui,sans-serif;
+  --font-text:"IBM Plex Sans",system-ui,sans-serif;
+  --brand-soft:#DDE7E9; --surface:#FBFCFC; --ink:#16242A; --ink-2:#4D5C61;
+  --hairline:rgba(22,36,42,0.10); --font-mono:"IBM Plex Sans",ui-monospace,monospace; --r:14px; --r-lg:18px;
+  --shadow:0 24px 50px -28px rgba(44,110,127,0.40),0 8px 20px -16px rgba(22,36,42,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-text);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-image:radial-gradient(60% 40% at 50% -5%,rgba(44,110,127,0.08),transparent 70%);background-attachment:fixed;}
+.wrap{width:100%;max-width:860px;margin:0 auto;padding:0 24px;}
+section{position:relative;z-index:1;}
+.eyebrow{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand);display:inline-flex;align-items:center;gap:9px;}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--accent);}
+h2.title{font-family:var(--font-display);font-weight:800;font-size:clamp(27px,5.4vw,40px);letter-spacing:-0.02em;line-height:1.08;margin:14px 0 16px;}
+.lead{color:var(--ink-2);font-size:17px;max-width:42em;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;border-radius:999px;font-family:var(--font-text);font-weight:600;cursor:pointer;border:none;transition:transform 200ms,box-shadow 200ms,background 200ms;}
+.btn-primary{background:var(--brand);color:#fff;padding:13px 24px;min-height:48px;font-size:15px;box-shadow:0 14px 28px -12px rgba(44,110,127,0.55);}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-lg{padding:18px 34px;font-size:17px;min-height:58px;}
+.btn-ghost{background:var(--surface);border:1px solid var(--hairline);color:var(--ink);padding:13px 24px;}
+.nav{position:sticky;top:0;z-index:100;background:rgba(241,244,245,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--hairline);}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;}
+.nav .bm{font-family:var(--font-display);font-weight:800;font-size:18px;letter-spacing:-0.02em;}
+.nav .bm span{color:var(--brand);}
+.nav .btn-primary{padding:10px 20px;min-height:42px;font-size:14px;}
+.hero{padding:70px 0 50px;text-align:center;}
+.hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(34px,6.4vw,58px);line-height:1.04;letter-spacing:-0.03em;margin:20px auto 18px;max-width:15em;}
+.hero h1 em{font-style:normal;color:var(--brand);}
+.hero .lead{margin:0 auto 30px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:var(--r);overflow:hidden;max-width:480px;margin:30px auto 0;}
+.stat{background:var(--paper);padding:16px 8px;text-align:center;}
+.stat .v{font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--brand);letter-spacing:-0.02em;}
+.stat .l{font-family:var(--font-mono);font-size:9.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-2);margin-top:2px;}
+.block{padding:52px 0;}
+.block.alt{background:var(--brand-soft);}
+.center{text-align:center;}
+.center .lead{margin-left:auto;margin-right:auto;}
+.pain-list{display:grid;gap:10px;max-width:40em;margin:24px auto 0;}
+.pain{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r);padding:16px 18px;font-size:15.5px;}
+.pain svg{width:20px;height:20px;color:var(--accent);flex:0 0 auto;margin-top:2px;}
+.modules{display:grid;gap:14px;grid-template-columns:1fr;margin-top:28px;}
+@media(min-width:620px){.modules{grid-template-columns:1fr 1fr;}}
+.module{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 22px;}
+.module .n{font-family:var(--font-mono);font-size:12px;font-weight:600;letter-spacing:0.08em;color:var(--brand);}
+.module h3{font-family:var(--font-display);font-weight:700;font-size:19px;letter-spacing:-0.01em;margin:8px 0 6px;}
+.module p{font-size:14.5px;color:var(--ink-2);}
+.testi{display:grid;gap:14px;grid-template-columns:1fr;margin-top:28px;}
+@media(min-width:680px){.testi{grid-template-columns:1fr 1fr;}}
+.t-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:24px 22px;}
+.t-card p{font-size:15.5px;margin-bottom:16px;}
+.t-card .who{display:flex;align-items:center;gap:12px;}
+.t-card .av{width:42px;height:42px;border-radius:12px;background:var(--brand);color:#fff;display:grid;place-items:center;font-family:var(--font-display);font-weight:700;}
+.t-card .who strong{display:block;font-size:14px;}
+.t-card .who span{font-size:12px;color:var(--ink-2);}
+.bonus{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px dashed var(--accent);border-radius:var(--r-lg);padding:22px 24px;max-width:44em;margin:24px auto 0;}
+.bonus .ic{width:48px;height:48px;flex:0 0 auto;border-radius:12px;background:rgba(221,161,94,0.16);color:var(--accent);display:grid;place-items:center;}
+.bonus h3{font-family:var(--font-display);font-weight:700;font-size:18px;margin-bottom:4px;}
+.bonus p{font-size:14.5px;color:var(--ink-2);}
+.guarantee{display:flex;gap:18px;align-items:center;background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:30px 28px;max-width:46em;margin:0 auto;box-shadow:var(--shadow);}
+.guarantee .seal{width:64px;height:64px;flex:0 0 auto;border-radius:16px;border:2px solid rgba(255,255,255,0.4);display:grid;place-items:center;color:var(--accent);}
+.guarantee .seal svg{width:30px;height:30px;}
+.guarantee h3{font-family:var(--font-display);font-weight:700;font-size:20px;margin-bottom:4px;letter-spacing:-0.01em;}
+.guarantee p{font-size:14.5px;color:rgba(241,244,245,0.78);}
+.price-card{max-width:440px;margin:28px auto 0;background:var(--surface);border:1px solid var(--hairline);border-radius:22px;padding:38px 32px;text-align:center;box-shadow:var(--shadow);}
+.price-card .tag{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);}
+.price-card .from{color:var(--ink-2);text-decoration:line-through;font-size:16px;margin-top:14px;}
+.price-card .now{font-family:var(--font-display);font-weight:800;font-size:52px;letter-spacing:-0.03em;line-height:1;margin:4px 0;}
+.price-card .now small{font-size:20px;color:var(--ink-2);}
+.price-card .install{color:var(--ink-2);font-size:14px;margin-bottom:24px;}
+.price-card .btn{width:100%;}
+.price-card .reassure{font-size:12.5px;color:var(--ink-2);margin-top:14px;}
+.faq{max-width:46em;margin:28px auto 0;}
+details{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r);margin-bottom:10px;overflow:hidden;}
+summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:600;font-size:15.5px;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--brand);transition:transform 200ms;}
+details[open] summary::after{transform:rotate(45deg);}
+details p{padding:0 20px 18px;color:var(--ink-2);font-size:14.5px;}
+.final{padding:58px 0 30px;text-align:center;}
+footer{padding:40px 0 60px;text-align:center;border-top:1px solid var(--hairline);margin-top:28px;}
+footer .crn{font-family:var(--font-mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-2);}
+footer .disc{font-size:12px;color:var(--ink-2);max-width:40em;margin:12px auto 0;opacity:0.85;}
+.about{display:flex;gap:26px;align-items:center;flex-wrap:wrap;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px;max-width:48em;margin:0 auto;box-shadow:var(--shadow);}
+.about img{width:150px;height:184px;object-fit:cover;border-radius:16px;flex:0 0 auto;}
+.about .ab-body{flex:1;min-width:240px;}
+.about .role{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--brand);margin-bottom:8px;}
+.about h3{font-family:var(--font-display);font-weight:800;font-size:23px;letter-spacing:-0.02em;margin-bottom:8px;}
+.about p{font-size:15px;color:var(--ink-2);}
+@media(prefers-reduced-motion:no-preference){.reveal{opacity:0;transform:translateY(16px);animation:rise 720ms cubic-bezier(.2,.7,.2,1) forwards;}@keyframes rise{to{opacity:1;transform:none;}}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap"><div class="bm">Decifre <span>Seus Exames</span></div><a class="btn btn-primary" href="#comprar">Quero acesso</a></div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <span class="eyebrow reveal" style="animation-delay:40ms">Programa online · 5 módulos</span> <!-- [TROCAR] -->
+    <h1 class="reveal" style="animation-delay:120ms">Seus exames estão "normais" — mas você não está. Aprenda a <em>lê-los</em> de verdade.</h1> <!-- [TROCAR] -->
+    <p class="lead reveal" style="animation-delay:200ms">Um programa pra você entender o que cada marcador diz sobre sua energia, sono e composição corporal — e ajustar sua alimentação com base em dados, não em achismo.</p>
+    <div class="hero-actions reveal" style="animation-delay:280ms">
+      <a class="btn btn-primary btn-lg" href="#comprar">Quero acesso</a>
+      <a class="btn btn-ghost btn-lg" href="#conteudo">Ver o conteúdo</a>
+    </div>
+    <div class="stats reveal" style="animation-delay:340ms">
+      <div class="stat"><div class="v">5</div><div class="l">módulos práticos</div></div>
+      <div class="stat"><div class="v">+20</div><div class="l">marcadores explicados</div></div>
+      <div class="stat"><div class="v">7 dias</div><div class="l">de garantia</div></div>
+    </div>
+  </section>
+
+  <section class="block center"> <!-- DOR --> <!-- [TROCAR] -->
+    <span class="eyebrow">Talvez você se reconheça</span>
+    <h2 class="title">Você sai do laboratório com "está tudo bem" e ainda assim se sente mal</h2>
+    <p class="lead">Faixa de referência não é o mesmo que faixa ideal. Muita coisa que afeta seu dia a dia passa batido num laudo lido às pressas.</p>
+    <div class="pain-list">
+      <div class="pain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg> Cansaço e queda de rendimento, mesmo com exame "normal".</div>
+      <div class="pain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg> Não saber o que pedir nem o que cada número significa.</div>
+      <div class="pain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg> Mudar a dieta no escuro, sem medir se está funcionando.</div>
+      <div class="pain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg> Sentir que poderia render mais — no treino e no trabalho.</div>
+    </div>
+  </section>
+
+  <section class="block alt center"> <!-- SOLUÇÃO --> <!-- [TROCAR] -->
+    <span class="eyebrow">A proposta</span>
+    <h2 class="title">Pare de adivinhar. Comece a medir.</h2>
+    <p class="lead">No Decifre Seus Exames você aprende a ler seus principais marcadores e a traduzir cada um em ação nutricional. Conhecimento pra conversar de igual pra igual com quem cuida de você — pra sempre, não por um mês.</p>
+  </section>
+
+  <section class="block"> <!-- SOBRE / AUTORIDADE --> <!-- [TROCAR] -->
+    <div class="center"><span class="eyebrow">Quem vai te ensinar</span><h2 class="title">Dra. Marina Reis</h2></div>
+    <div class="about reveal">
+      <img src="marina-profile.png" alt="Dra. Marina Reis, nutricionista clínica e esportiva">
+      <div class="ab-body">
+        <div class="role">CRN-3 00000 · Clínica &amp; esportiva</div>
+        <h3>Decisões baseadas no que dá pra medir</h3>
+        <p>Sou nutricionista clínica e esportiva. Trabalho cruzando seus exames, sua rotina e seus objetivos para montar protocolos sobre dados — não sobre achismo. Neste programa, eu te ensino a fazer o mesmo: ler seus marcadores e transformar cada número em uma decisão melhor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="conteudo"> <!-- O QUE RECEBE --> <!-- [TROCAR] -->
+    <div class="center"><span class="eyebrow">O que você recebe</span><h2 class="title">5 módulos pra parar de adivinhar</h2></div>
+    <div class="modules">
+      <div class="module"><span class="n">MÓDULO 01</span><h3>O laudo descomplicado</h3><p>Como ler um exame: referência, faixa ideal e o que de fato importa.</p></div>
+      <div class="module"><span class="n">MÓDULO 02</span><h3>Energia e tireoide</h3><p>Os marcadores por trás do cansaço e como a alimentação influencia.</p></div>
+      <div class="module"><span class="n">MÓDULO 03</span><h3>Glicemia e composição</h3><p>O que olhar pra entender fome, estoque de gordura e performance.</p></div>
+      <div class="module"><span class="n">MÓDULO 04</span><h3>Ferro, vitamina D e cia</h3><p>Deficiências comuns em mulheres ativas e como ajustar pela comida.</p></div>
+      <div class="module"><span class="n">MÓDULO 05</span><h3>Do exame ao prato</h3><p>Transformar cada achado num ajuste prático e mensurável na dieta.</p></div>
+    </div>
+  </section>
+
+  <section class="block alt"> <!-- PROVA --> <!-- [TROCAR] (confirme se reais) -->
+    <div class="center"><span class="eyebrow">Quem já fez</span><h2 class="title">De "está tudo normal" para "agora eu entendo"</h2></div>
+    <div class="testi">
+      <div class="t-card"><p>“Aprendi a ler meu próprio exame. Mudei 2 coisas na dieta e meu cansaço melhorou.” <em>(confirme se é real)</em></p><div class="who"><div class="av">L</div><div><strong>Letícia, 31</strong><span>Aluna do programa</span></div></div></div>
+      <div class="t-card"><p>“Parei de fazer dieta no escuro. Hoje eu meço, ajusto e sei o porquê.” <em>(confirme se é real)</em></p><div class="who"><div class="av">C</div><div><strong>Carla, 39</strong><span>Aluna do programa</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="block"> <!-- BÔNUS --> <!-- [TROCAR] -->
+    <div class="center"><span class="eyebrow">Bônus de entrada</span><h2 class="title">Quem entra agora leva junto</h2></div>
+    <div class="bonus">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+      <div><h3>Checklist de exames (PDF)</h3><p>A lista do que pedir ao seu médico e a planilha pra acompanhar a evolução dos marcadores.</p></div>
+    </div>
+  </section>
+
+  <section class="block center"> <!-- GARANTIA --> <!-- [TROCAR] -->
+    <div class="guarantee">
+      <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 8 8 8 8s8-3 8-8V6Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+      <div style="text-align:left"><h3>Risco zero por 7 dias</h3><p>Acesse, assista o primeiro módulo, avalie. Se não for pra você, devolvo 100% em até 7 dias.</p></div>
+    </div>
+  </section>
+
+  <section class="block alt center" id="comprar"> <!-- PREÇO --> <!-- [TROCAR] -->
+    <span class="eyebrow">Comece hoje</span>
+    <h2 class="title">Entender seus exames vale mais que repetir mais um detox</h2>
+    <div class="price-card">
+      <span class="tag">Acesso imediato · vagas da turma</span>
+      <div class="from">de R$ 597</div>
+      <div class="now"><small>R$</small> 347</div>
+      <div class="install">ou 12× de R$ 34,70</div>
+      <a class="btn btn-primary btn-lg" href="#checkout">Garantir meu acesso</a>
+      <p class="reassure">Pagamento seguro · Acesso imediato · 7 dias de garantia</p>
+    </div>
+  </section>
+
+  <section class="block"> <!-- FAQ --> <!-- [TROCAR] -->
+    <div class="center"><span class="eyebrow">Ainda em dúvida?</span><h2 class="title">Perguntas frequentes</h2></div>
+    <div class="faq">
+      <details><summary>Isso substitui consulta ou diagnóstico?</summary><p>Não. O programa é educativo. Ele te ensina a entender seus exames pra decidir melhor e conversar com seu médico/nutricionista — não substitui avaliação individual nem prescrição.</p></details>
+      <details><summary>Preciso ter exames em mãos?</summary><p>Ajuda, mas não é obrigatório pra começar. Você aprende a interpretar e a pedir os exames certos.</p></details>
+      <details><summary>Serve pra quem não treina?</summary><p>Sim. Os módulos servem pra qualquer mulher que queira entender o próprio corpo — com aplicações extras pra quem é ativa.</p></details>
+      <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia incondicional. Pediu nesse prazo, devolvo tudo.</p></details>
+    </div>
+  </section>
+
+  <section class="final">
+    <h2 class="title">Pronta pra parar de adivinhar?</h2>
+    <a class="btn btn-primary btn-lg" href="#comprar">Quero acesso ao programa</a>
+  </section>
+
+  <footer>
+    <div class="crn">Dra. Marina Reis · CRN-3 00000 · Nutrição clínica e esportiva</div>
+    <p class="disc">Conteúdo educativo. Não substitui consulta, diagnóstico ou tratamento individualizado com profissional habilitado. A interpretação de exames deve ser feita com acompanhamento. Resultados variam de pessoa para pessoa.</p>
+  </footer>
+</div>
+</body>
+</html>

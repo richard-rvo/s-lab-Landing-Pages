@@ -1,0 +1,47 @@
+════════════════════════════════════════════════════════════════════
+  IDENTIDADE 3 · AZUL CLÍNICO — PROMPTS DE REGENERAÇÃO
+  Persona: Dra. Marina Reis (nutrição clínica/esportiva, baseada em dados).
+  Cole no Codex/ChatGPT. 1 bloco por site + prompt de imagem no fim.
+════════════════════════════════════════════════════════════════════
+
+SISTEMA DE DESIGN (vale para os 3 sites):
+• Single-file HTML autocontido (CSS inline, SVG inline, Google Fonts). Sem build.
+• Fundo cinza-azulado claro #F1F4F5 (nunca branco puro). Marca azul-petróleo #2C6E7F.
+  Acento âmbar #DDA15E (~5%).
+• Tipografia: Archivo (títulos, grotesca técnica, peso 700–800, letter-spacing negativo)
+  + IBM Plex Sans (texto).
+• UX clínica/estruturada: grid, cantos mais retos (raios 12–18px), FAIXA DE DADOS
+  (3 números: anos / avaliações / individual), linhas precisas, blocos mensuráveis.
+• Movimento único: reveal escalonado no load. Tokenize no :root: --brand,--accent,--paper,--font-display,--font-text.
+• VOZ: precisa, baseada em dados e especificidade. Confiança pela medição, não pela
+  emoção. "Seu cansaço tem causa — e aparece nos exames." Sem hype, sem "transforme".
+• SAÚDE: educativo, NÃO diagnóstico. Sem promessa de cura/quilos. CRN sempre visível.
+  Deixar claro que interpretação de exame exige acompanhamento.
+
+──────────────────────────────────────────
+► SITE 1 · BIO — retrato quadrado (ou monograma) → nome Archivo → credencial em pill
+com check → bio precisa (baseada em exames) → FAIXA DE DADOS (3 stats) → 5 links
+(1 primário azul + 4 ghost) → card de oferta escuro (acento âmbar) → ícones sociais → rodapé CRN.
+
+► SITE 2 · WHATSAPP (mono-CTA) — hero (headline de causa mensurável:
+"Seu cansaço tem causa nos exames" + sub + botão verde) → FAIXA DE DADOS → 3 benefícios
+(decisão por dado / protocolo individual / acompanhamento mensurável) → como funciona
+(3 passos numerados 01/02/03) → prova (1 depoimento «confirme») → CTA final card escuro →
+FAB → rodapé. Tudo → wa.me/55[NÚMERO]?text=[MSG].
+
+► SITE 3 · VENDAS (infoproduto, PAS) — nav+CTA → hero (headline "exames normais mas você
+não está" + FAIXA DE DADOS) → DOR (4 itens, incl. "referência ≠ ideal") → solução
+("pare de adivinhar, comece a medir") → 5 módulos → prova (2 depoimentos «confirme») →
+bônus (checklist de exames) → garantia (7 dias) → preço (de/por + parcelas) → FAQ (4,
+incl. "substitui diagnóstico? Não") → CTA final → rodapé CRN + disclaimer reforçado.
+
+PREENCHA em todos: nome, CRN, especialidade, números reais, textos, links/checkout, número.
+
+════════════════════════════════════════════════════════════════════
+  RETRATO (gerar imagem IA → salvar como retrato-marina.jpg)
+════════════════════════════════════════════════════════════════════
+Confident professional portrait of a woman nutritionist, ~35–45, composed and
+competent expression, modern clinical attire. Cool light-gray background (#F1F4F5),
+clean diffused light, teal-petrol palette with subtle warm amber accent. Sharp modern
+editorial style, vertical 3:4, head-and-shoulders. No text, no watermark, no neon,
+no hard shadows, no oversaturated colors.

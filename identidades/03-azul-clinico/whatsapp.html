@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Marina Reis · Seu cansaço tem causa nos exames</title>
+<meta name="description" content="Nutrição clínica baseada em exames. Fale no WhatsApp com a Dra. Marina Reis e agende sua avaliação.">
+
+<!--
+  IDENTIDADE 3 · AZUL CLÍNICO — SITE: WHATSAPP (mono-CTA)
+  Persona: Dra. Marina Reis. Troque [TROCAR] e o número wa.me/55... + ?text=.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#2C6E7F; --accent:#DDA15E; --paper:#F1F4F5;
+  --font-display:"Archivo",system-ui,sans-serif;
+  --font-text:"IBM Plex Sans",system-ui,sans-serif;
+  --brand-soft:#3E8294; --wa:#25D366; --paper-2:#E4EAEC; --surface:#FBFCFC;
+  --ink:#16242A; --ink-2:#4D5C61; --hairline:rgba(22,36,42,0.10);
+  --font-mono:"IBM Plex Sans",ui-monospace,monospace; --r:14px;
+  --shadow:0 24px 50px -26px rgba(44,110,127,0.45);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-text);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-image:radial-gradient(50% 38% at 88% 0%,rgba(44,110,127,0.12),transparent 70%),radial-gradient(45% 36% at 0% 16%,rgba(221,161,94,0.08),transparent 70%);background-attachment:fixed;}
+.wrap{width:100%;max-width:680px;margin:0 auto;padding:0 22px;}
+section{position:relative;z-index:1;}
+.eyebrow{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand);display:inline-flex;align-items:center;gap:9px;}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--accent);}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:11px;background:var(--wa);color:#fff;text-decoration:none;font-family:var(--font-text);font-weight:600;font-size:17px;padding:17px 28px;border-radius:999px;min-height:56px;box-shadow:0 16px 32px -12px rgba(37,211,102,0.55);transition:transform 200ms,box-shadow 200ms;}
+.cta:hover{transform:translateY(-2px);box-shadow:0 22px 40px -12px rgba(37,211,102,0.6);}
+.cta svg{width:22px;height:22px;}
+.micro{font-size:13.5px;color:var(--ink-2);margin-top:13px;display:flex;gap:7px;align-items:center;justify-content:center;}
+.micro::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 4px rgba(37,211,102,0.18);}
+.hero{padding:52px 0 36px;text-align:center;}
+.hero-portrait{width:120px;height:120px;margin:0 auto 22px;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border:3px solid #fff;}
+.hero-portrait img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero .eyebrow{margin-bottom:20px;}
+.hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(32px,7.4vw,52px);line-height:1.02;letter-spacing:-0.03em;margin-bottom:18px;}
+.hero h1 em{font-style:normal;color:var(--brand);}
+.hero .sub{font-size:clamp(16px,4.3vw,18px);color:var(--ink-2);max-width:31em;margin:0 auto 30px;}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:var(--r);overflow:hidden;max-width:440px;margin:0 auto 36px;}
+.stat{background:var(--paper);padding:16px 8px;text-align:center;}
+.stat .v{font-family:var(--font-display);font-weight:700;font-size:23px;color:var(--brand);letter-spacing:-0.02em;}
+.stat .l{font-family:var(--font-mono);font-size:9.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-2);margin-top:2px;}
+.benefits{padding:14px 0 36px;display:grid;gap:12px;grid-template-columns:1fr;}
+@media(min-width:560px){.benefits{grid-template-columns:repeat(3,1fr);}}
+.benefit{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r);padding:22px 20px;}
+.benefit .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:var(--paper-2);color:var(--brand);margin-bottom:13px;}
+.benefit .ic svg{width:22px;height:22px;stroke-width:1.7;}
+.benefit h3{font-family:var(--font-display);font-weight:700;font-size:17px;letter-spacing:-0.01em;margin-bottom:5px;}
+.benefit p{font-size:14px;color:var(--ink-2);}
+.how{padding:36px 0;}
+.how .head{text-align:center;margin-bottom:30px;}
+.how h2{font-family:var(--font-display);font-weight:800;font-size:clamp(25px,6vw,36px);letter-spacing:-0.02em;margin-top:12px;}
+.steps{display:grid;gap:12px;counter-reset:s;}
+.step{display:flex;gap:18px;align-items:flex-start;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r);padding:20px 22px;}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--brand);width:42px;height:42px;flex:0 0 auto;border-radius:11px;display:grid;place-items:center;background:var(--paper-2);}
+.step h3{font-family:var(--font-display);font-weight:700;font-size:17px;margin-bottom:3px;letter-spacing:-0.01em;}
+.step p{font-size:14px;color:var(--ink-2);}
+.proof{padding:38px 0;text-align:center;}
+.proof .author{display:inline-flex;align-items:center;gap:14px;margin-bottom:22px;}
+.proof .av{width:60px;height:60px;border-radius:16px;background:var(--brand);overflow:hidden;box-shadow:var(--shadow);}
+.proof .av img{width:100%;height:100%;object-fit:cover;display:block;}
+.proof .meta{text-align:left;}
+.proof .meta strong{display:block;font-family:var(--font-display);font-weight:700;font-size:16px;}
+.proof .meta span{font-family:var(--font-mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-2);}
+.quote{font-family:var(--font-display);font-weight:600;font-size:clamp(18px,4.5vw,23px);line-height:1.36;letter-spacing:-0.01em;max-width:23em;margin:0 auto 8px;}
+.quote .mk{color:var(--brand);}
+.qby{font-size:13px;color:var(--ink-2);}
+.final{padding:46px 0 56px;text-align:center;}
+.fcard{background:var(--ink);color:var(--paper);border-radius:22px;padding:48px 28px;position:relative;overflow:hidden;}
+.fcard::before{content:"";position:absolute;width:320px;height:320px;right:-110px;top:-110px;background:radial-gradient(circle,rgba(44,110,127,0.55),transparent 70%);filter:blur(40px);}
+.fcard h2{position:relative;font-family:var(--font-display);font-weight:800;font-size:clamp(25px,6.2vw,38px);line-height:1.04;letter-spacing:-0.02em;margin-bottom:12px;}
+.fcard p{position:relative;color:rgba(241,244,245,0.78);max-width:26em;margin:0 auto 26px;font-size:16px;}
+.fcard .cta{position:relative;}
+.fcard .micro{color:rgba(241,244,245,0.6);}
+footer{text-align:center;padding:0 0 100px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-2);opacity:0.7;}
+footer .crn{display:block;margin-top:6px;opacity:0.85;}
+.fab{position:fixed;right:16px;bottom:16px;z-index:50;width:60px;height:60px;border-radius:999px;background:var(--wa);display:grid;place-items:center;color:#fff;text-decoration:none;box-shadow:0 14px 30px -8px rgba(37,211,102,0.6);transition:transform 200ms;}
+.fab:hover{transform:scale(1.06);}
+.fab svg{width:30px;height:30px;}
+@media(prefers-reduced-motion:no-preference){.reveal{opacity:0;transform:translateY(16px);animation:rise 720ms cubic-bezier(.2,.7,.2,1) forwards;}@keyframes rise{to{opacity:1;transform:none;}}}
+</style>
+</head>
+<body>
+
+<a class="fab reveal" style="animation-delay:200ms" href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Marina%2C%20vim%20pela%20p%C3%A1gina%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.02ZM12.04 20.15a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23a8.2 8.2 0 0 1 8.23 8.24c0 4.54-3.7 8.23-8.24 8.23Z"/></svg>
+</a>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-portrait reveal" style="animation-delay:20ms"><img src="marina-profile.png" alt="Dra. Marina Reis, nutricionista clínica e esportiva"></div>
+    <div class="eyebrow reveal" style="animation-delay:40ms">Nutrição clínica baseada em exames</div> <!-- [TROCAR] -->
+    <h1 class="reveal" style="animation-delay:120ms">Seu cansaço tem causa. E ela aparece nos seus <em>exames</em>.</h1> <!-- [TROCAR] -->
+    <p class="sub reveal" style="animation-delay:200ms">Eu cruzo seus exames, sua rotina e seus objetivos pra montar um protocolo que ataca o que está medido — não o que está na moda. Clínica e esportiva.</p> <!-- [TROCAR] -->
+    <a class="cta reveal" style="animation-delay:280ms" href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Marina%2C%20vim%20pela%20p%C3%A1gina%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.02Zm-7.01 15.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23a8.2 8.2 0 0 1 8.23 8.24c0 4.54-3.7 8.23-8.24 8.23Z"/></svg>
+      Agendar minha avaliação
+    </a>
+    <div class="micro reveal" style="animation-delay:340ms">Retorno da equipe no mesmo dia útil</div>
+  </section>
+
+  <div class="stats reveal" style="animation-delay:80ms"> <!-- [TROCAR] -->
+    <div class="stat"><div class="v">+10</div><div class="l">anos de clínica</div></div>
+    <div class="stat"><div class="v">2.000+</div><div class="l">avaliações</div></div>
+    <div class="stat"><div class="v">100%</div><div class="l">protocolo individual</div></div>
+  </div>
+
+  <section class="benefits"> <!-- [TROCAR] -->
+    <div class="benefit reveal" style="animation-delay:80ms">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
+      <h3>Decisão por dado</h3><p>Leio seus exames pra entender o que o número está dizendo do seu corpo.</p>
+    </div>
+    <div class="benefit reveal" style="animation-delay:160ms">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v18M5 8l7-5 7 5"/></svg></div>
+      <h3>Protocolo individual</h3><p>Construído pro seu objetivo: clínico, performance ou composição corporal.</p>
+    </div>
+    <div class="benefit reveal" style="animation-delay:240ms">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h3>Acompanhamento mensurável</h3><p>A gente reavalia e ajusta com base no que mudou nos seus marcadores.</p>
+    </div>
+  </section>
+
+  <section class="how"> <!-- [TROCAR] -->
+    <div class="head"><span class="eyebrow reveal">O protocolo</span><h2 class="reveal" style="animation-delay:80ms">Como funciona</h2></div>
+    <div class="steps">
+      <div class="step reveal" style="animation-delay:120ms"><div><h3>Você agenda pelo WhatsApp</h3><p>Me conta seu objetivo e quais exames já tem em mãos.</p></div></div>
+      <div class="step reveal" style="animation-delay:200ms"><div><h3>Avaliação e leitura de exames</h3><p>Cruzo seus marcadores, histórico e rotina pra mapear o que ajustar.</p></div></div>
+      <div class="step reveal" style="animation-delay:280ms"><div><h3>Protocolo e reavaliação</h3><p>Plano individual com metas claras e revisão dos resultados.</p></div></div>
+    </div>
+  </section>
+
+  <section class="proof"> <!-- [TROCAR] -->
+    <div class="author reveal"><div class="av"><img src="marina-profile.png" alt="Dra. Marina Reis"></div><div class="meta"><strong>Dra. Marina Reis</strong><span>CRN-3 00000 · Clínica &amp; esportiva</span></div></div>
+    <p class="quote reveal" style="animation-delay:80ms">“Eu acredito no que dá pra medir. <span class="mk">Seu protocolo é construído sobre os seus números</span> — não sobre achismo.”</p>
+    <p class="qby reveal" style="animation-delay:140ms">— Dra. Marina Reis</p>
+  </section>
+
+  <section class="final">
+    <div class="fcard reveal">
+      <h2>Quer descobrir o que seus exames dizem?</h2> <!-- [TROCAR] -->
+      <p>Me chame no WhatsApp com seu objetivo. Eu te explico como funciona a avaliação e o próximo passo.</p>
+      <a class="cta" href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Marina%2C%20quero%20descobrir%20o%20que%20meus%20exames%20dizem">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.02Zm-7.01 15.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23a8.2 8.2 0 0 1 8.23 8.24c0 4.54-3.7 8.23-8.24 8.23Z"/></svg>
+      Agendar avaliação
+      </a>
+      <div class="micro">Vagas limitadas por mês</div>
+    </div>
+  </section>
+
+  <footer>Dra. Marina Reis · Nutrição clínica<span class="crn">CRN-3 00000 — este conteúdo não substitui consulta</span></footer>
+</div>
+</body>
+</html>
