@@ -1,0 +1,36 @@
+# --- macOS ---
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# --- Windows ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Editores / IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Config local do Claude Code (não publicar) ---
+.claude/
+
+# --- Node / build (caso venha a usar) ---
+node_modules/
+dist/
+.cache/
+
+# --- Temporários e logs ---
+*.log
+*.tmp
+scratchpad/
+scratch-*.png
+
+# --- Segredos (nunca commitar chaves) ---
+.env
+.env.*

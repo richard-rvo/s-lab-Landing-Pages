@@ -39,7 +39,7 @@ identidades/
 ├── 01-verde-herbal/   bio.html · whatsapp.html · vendas.html · prompts-regeneracao.txt
 ├── 02-terracota/      bio.html · whatsapp.html · vendas.html · prompts-regeneracao.txt
 └── 03-azul-clinico/   bio.html · whatsapp.html · vendas.html · prompts-regeneracao.txt
-hub/index.html         → a galeria S-LAB (âmbar/glass), agrupada por identidade
+index.html         → a galeria S-LAB (âmbar/glass), agrupada por identidade
 skills/skill-rv-landing.md   → sistema de design das LPs (camaleão + 3 identidades + anti-IA)
 agentskill-copy-lp-nutris.md → AgentSkill de copy p/ criar um GPT no ChatGPT (voz por identidade)
 SKILL.md               → design system do S-LAB (rv-design, usado no hub)
@@ -55,7 +55,7 @@ images/                → logos S-LAB
 
 ---
 
-## Como funciona o hub (`hub/index.html`)
+## Como funciona o hub (`index.html`)
 
 Marca S-LAB (papel quente + glassmorphism âmbar). Lista as 3 identidades, cada uma com
 seus 3 sites em cards. Por site:
