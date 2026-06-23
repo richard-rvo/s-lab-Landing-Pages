@@ -34,3 +34,6 @@ scratch-*.png
 # --- Segredos (nunca commitar chaves) ---
 .env
 .env.*
+
+# Imagens originais (pesadas) — não publicar
+_originais/

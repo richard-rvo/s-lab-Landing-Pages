@@ -103,7 +103,9 @@ footer{padding:40px 0 60px;text-align:center;border-top:1px solid var(--hairline
 footer .crn{font-family:var(--font-mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-2);}
 footer .disc{font-size:12px;color:var(--ink-2);max-width:40em;margin:12px auto 0;opacity:0.85;}
 .about{display:flex;gap:26px;align-items:center;flex-wrap:wrap;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:28px;max-width:48em;margin:0 auto;box-shadow:var(--shadow);}
-.about img{width:150px;height:184px;object-fit:cover;border-radius:16px;flex:0 0 auto;}
+.about-ph{position:relative;width:150px;height:184px;border-radius:16px;overflow:hidden;background:var(--brand);flex:0 0 auto;}
+.about-ph::before{content:"M";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-family:var(--font-display);font-weight:800;font-size:54px;letter-spacing:-0.02em;}
+.about-ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block;}
 .about .ab-body{flex:1;min-width:240px;}
 .about .role{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--brand);margin-bottom:8px;}
 .about h3{font-family:var(--font-display);font-weight:800;font-size:23px;letter-spacing:-0.02em;margin-bottom:8px;}
@@ -154,7 +156,7 @@ footer .disc{font-size:12px;color:var(--ink-2);max-width:40em;margin:12px auto 0
   <section class="block"> <!-- SOBRE / AUTORIDADE --> <!-- [TROCAR] -->
     <div class="center"><span class="eyebrow">Quem vai te ensinar</span><h2 class="title">Dra. Marina Reis</h2></div>
     <div class="about reveal">
-      <img src="marina-profile.png" alt="Dra. Marina Reis, nutricionista clínica e esportiva">
+      <div class="about-ph"><img src="marina-profile.jpg" alt="Dra. Marina Reis, nutricionista clínica e esportiva" onerror="this.style.display='none'"></div>
       <div class="ab-body">
         <div class="role">CRN-3 00000 · Clínica &amp; esportiva</div>
         <h3>Decisões baseadas no que dá pra medir</h3>

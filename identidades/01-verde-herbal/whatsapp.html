@@ -39,8 +39,9 @@ section{position:relative;z-index:1;}
 .micro::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 4px rgba(37,211,102,0.18);}
 
 .hero{padding:52px 0 40px;text-align:center;}
-.hero-portrait{width:108px;height:108px;margin:0 auto 22px;border-radius:46% 54% 52% 48%/52% 46% 54% 48%;overflow:hidden;box-shadow:var(--shadow);border:3px solid #fff;}
-.hero-portrait img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-portrait{position:relative;width:108px;height:108px;margin:0 auto 22px;border-radius:46% 54% 52% 48%/52% 46% 54% 48%;overflow:hidden;box-shadow:var(--shadow);border:3px solid #fff;background:var(--brand);}
+.hero-portrait::before{content:"C";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-family:var(--font-display);font-weight:700;font-size:44px;}
+.hero-portrait img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block;}
 .hero .eyebrow{margin-bottom:20px;}
 .hero h1{font-family:var(--font-display);font-weight:600;font-size:clamp(33px,7.6vw,52px);line-height:1.04;letter-spacing:-0.01em;margin-bottom:18px;}
 .hero h1 em{font-style:italic;color:var(--brand);}
@@ -65,8 +66,9 @@ section{position:relative;z-index:1;}
 
 .proof{padding:38px 0;text-align:center;}
 .proof .author{display:inline-flex;align-items:center;gap:14px;margin-bottom:22px;}
-.proof .av{width:62px;height:62px;border-radius:46% 54% 52% 48%/52% 46% 54% 48%;background:var(--brand);overflow:hidden;box-shadow:var(--shadow);}
-.proof .av img{width:100%;height:100%;object-fit:cover;display:block;}
+.proof .av{position:relative;width:62px;height:62px;border-radius:46% 54% 52% 48%/52% 46% 54% 48%;background:var(--brand);overflow:hidden;box-shadow:var(--shadow);}
+.proof .av::before{content:"C";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-family:var(--font-display);font-weight:700;font-size:24px;}
+.proof .av img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block;}
 .proof .meta{text-align:left;}
 .proof .meta strong{display:block;font-family:var(--font-display);font-size:17px;}
 .proof .meta span{font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-2);}
@@ -100,7 +102,7 @@ footer .crn{display:block;margin-top:6px;opacity:0.85;}
 
 <div class="wrap">
   <section class="hero">
-    <div class="hero-portrait reveal" style="animation-delay:20ms"><img src="cami-profile.png" alt="Cami Brandão, nutricionista comportamental"></div>
+    <div class="hero-portrait reveal" style="animation-delay:20ms"><img src="cami-profile.jpg" alt="Cami Brandão, nutricionista comportamental" onerror="this.style.display='none'"></div>
     <div class="eyebrow reveal" style="animation-delay:40ms">Nutrição sem dieta</div> <!-- [TROCAR] -->
     <h1 class="reveal" style="animation-delay:120ms">Você não acorda toda segunda <em>sem força de vontade</em>. O problema é o método.</h1> <!-- [TROCAR] -->
     <p class="sub reveal" style="animation-delay:200ms">Eu trabalho com reeducação comportamental: a gente entende seus gatilhos e monta um jeito de comer que cabe na sua vida real. Sem cardápio de sofrimento.</p> <!-- [TROCAR] -->
@@ -136,7 +138,7 @@ footer .crn{display:block;margin-top:6px;opacity:0.85;}
   </section>
 
   <section class="proof"> <!-- [TROCAR] -->
-    <div class="author reveal"><div class="av"><img src="cami-profile.png" alt="Cami Brandão"></div><div class="meta"><strong>Cami Brandão</strong><span>CRN-3 00000 · Comportamental</span></div></div>
+    <div class="author reveal"><div class="av"><img src="cami-profile.jpg" alt="Cami Brandão" onerror="this.style.display='none'"></div><div class="meta"><strong>Cami Brandão</strong><span>CRN-3 00000 · Comportamental</span></div></div>
     <p class="quote reveal" style="animation-delay:80ms">“Eu não vou te dar mais uma dieta. Vou te ajudar a entender <span class="mk">por que você come como come</span> — e é isso que muda o jogo.”</p>
     <p class="qby reveal" style="animation-delay:140ms">— Cami, sobre como eu trabalho</p>
   </section>
