@@ -19,7 +19,7 @@ Aqui está o briefing condensado pra colar no Claude Code:
 
 **3 LPs do nutri** (são a escada de dificuldade, por complexidade de copy, não de ferramenta):
 1. Link da bio (simples)
-2. LP de WhatsApp (`wa.me` com msg pré-preenchida)
+2. LP de captação de leads (`wa.me` com msg pré-preenchida)
 3. Página de vendas de infoproduto (estrutura longa)
 
 ## Painel de modelos (o ativo central)
@@ -38,6 +38,6 @@ IA gera template genérico ("padrão ChatGPT" visual: hero centralizado, Inter 4
 ## Próximos artefatos a construir
 1. **skill-rv-landing.md** — irmão do skill-rv-design, mas: tokenizado/camáleão, com as 3 peles, regras anti-genérico, estrutura de conversão embutida. Fundação de todos os modelos.
 2. **AgentSkill · Copy de LP para Nutris** — estrutura headline→dor→oferta→prova→garantia→CTA. Caveats de saúde (não prometer resultado). Padrão do "Ads para Nutris".
-3. **3 modelos de LP** (link bio / WhatsApp / página de vendas) × 3 peles, HTML single-file, responsivos.
+3. **3 modelos de LP** (link bio / captação de leads / página de vendas) × 3 peles, HTML single-file, responsivos.
 4. **Painel/hub** seguindo skill-rv-design (laranja/cream/SF/glass/símbolo R).
 

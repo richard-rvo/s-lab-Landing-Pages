@@ -1,7 +1,7 @@
 ════════════════════════════════════════════════════════════════════
   IDENTIDADE 1 · VERDE HERBAL — PROMPTS DE REGENERAÇÃO
   Persona: Cami Brandão (nutri comportamental, tom de amiga, anti-dieta).
-  Cole no Codex/ChatGPT. Há 1 bloco por site (bio / whatsapp / vendas) +
+  Cole no Codex/ChatGPT. Há 1 bloco por site (bio / captura-leads / vendas) +
   o prompt de imagem da persona no fim.
 ════════════════════════════════════════════════════════════════════
 
@@ -23,7 +23,7 @@ Estrutura: retrato orgânico (ou monograma) → nome → credencial mono → bio
 PREENCHA: nome, CRN, especialidade, bio, 5 links (com wa.me), oferta atual.
 
 ──────────────────────────────────────────
-► SITE 2 · WHATSAPP (mono-CTA)
+► SITE 2 · CAPTAÇÃO DE LEADS (mono-CTA, leva ao WhatsApp)
 Tudo leva ao WhatsApp (https://wa.me/55[NÚMERO]?text=[MSG]). Estrutura: hero (headline
 que TIRA a culpa da paciente + sub + botão verde + microcopy "respondo no mesmo dia")
 → 3 benefícios → como funciona (3 passos) → prova (1 depoimento «confirme») → CTA final

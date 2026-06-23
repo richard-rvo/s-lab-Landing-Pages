@@ -19,7 +19,7 @@ SISTEMA DE DESIGN (vale para os 3 sites):
 bio-assinatura itálica investigativa → 5 links (1 primário terracota + 4 ghost) →
 card de oferta (acento sage) → ícones sociais → rodapé com CRN.
 
-► SITE 2 · WHATSAPP (mono-CTA) — hero (headline que nomeia a causa oculta:
+► SITE 2 · CAPTAÇÃO DE LEADS (mono-CTA, leva ao WhatsApp) — hero (headline que nomeia a causa oculta:
 "Seu cansaço pode ser hormonal e ninguém investigou" + sub itálico + botão verde) →
 3 benefícios (olhar investigativo / protocolo individual / poucos casos) → como
 funciona (3 passos) → prova (1 depoimento «confirme») → CTA final card terracota →

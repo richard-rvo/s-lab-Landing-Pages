@@ -2,7 +2,7 @@
 
 Hub de modelos de landing page para **nutricionistas**, criado para o aulão final
 da série **IA na Prática (RV 2026)**. A aluna — mulher, 25–34, pouca experiência
-técnica — sai da aula com o **funil inteiro** no ar (link na bio + WhatsApp +
+técnica — sai da aula com o **funil inteiro** no ar (link na bio + captação de leads +
 página de vendas), com domínio próprio, sem programar.
 
 ## A ideia central: identidade primeiro
@@ -36,9 +36,9 @@ editorial com arcos; Azul é clínica, em grid com faixa de dados.
 
 ```
 identidades/
-├── 01-verde-herbal/   bio.html · whatsapp.html · vendas.html · prompts-regeneracao.txt
-├── 02-terracota/      bio.html · whatsapp.html · vendas.html · prompts-regeneracao.txt
-└── 03-azul-clinico/   bio.html · whatsapp.html · vendas.html · prompts-regeneracao.txt
+├── 01-verde-herbal/   bio.html · captura-leads.html · vendas.html · prompts-regeneracao.txt
+├── 02-terracota/      bio.html · captura-leads.html · vendas.html · prompts-regeneracao.txt
+└── 03-azul-clinico/   bio.html · captura-leads.html · vendas.html · prompts-regeneracao.txt
 index.html         → a galeria S-LAB (âmbar/glass), agrupada por identidade
 skills/skill-rv-landing.md   → sistema de design das LPs (camaleão + 3 identidades + anti-IA)
 agentskill-copy-lp-nutris.md → AgentSkill de copy p/ criar um GPT no ChatGPT (voz por identidade)
@@ -50,7 +50,7 @@ images/                → logos S-LAB
 
 ### Os 3 tipos de site (dentro de cada identidade)
 - **bio.html** — link do Instagram: retrato, bio-assinatura, pilha de 5 links, oferta.
-- **whatsapp.html** — mono-CTA: tudo leva ao `wa.me` com mensagem pré-preenchida + FAB.
+- **captura-leads.html** — captação de leads, mono-CTA: tudo leva ao `wa.me` com mensagem pré-preenchida + FAB.
 - **vendas.html** — infoproduto: dor → oferta → módulos → prova → garantia → preço → FAQ.
 
 ---

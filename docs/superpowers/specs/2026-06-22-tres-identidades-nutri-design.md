@@ -5,7 +5,7 @@
 **Contexto:** Evolução da galeria de Landing Pages (ver `historico.md` e o spec
 do Modelo 1). A unidade de trabalho deixa de ser "tipo de página" e passa a ser
 a **identidade visual completa**: cada identidade é uma marca (cor + tipografia +
-UX + voz própria) e gera os **3 sites** do funil — link na bio, WhatsApp e vendas.
+UX + voz própria) e gera os **3 sites** do funil — link na bio, captação de leads e vendas.
 
 ---
 
@@ -44,7 +44,7 @@ reescrever toda a copy com frameworks de marketing, sem vícios de IA.
 
 - **bio.html** — retrato/monograma → nome → credencial → bio-assinatura → 5 links
   (1 primário + 4 ghost) → card de oferta → sociais → rodapé. CTA = link primário.
-- **whatsapp.html** — hero (headline + sub + CTA WhatsApp) → 3 benefícios → como
+- **captura-leads.html** — hero (headline + sub + CTA WhatsApp) → 3 benefícios → como
   funciona (3 passos) → prova → CTA final + FAB. Mono-CTA `wa.me?text=`.
 - **vendas.html** — nav → hero → dor (PAS) → solução → o que recebe (módulos) →
   prova → bônus → garantia → preço → FAQ (`<details>`) → CTA. Estrutura longa.
@@ -75,9 +75,9 @@ layout pintado de cor diferente — muda ritmo, hierarquia e tom).
 
 ```
 identidades/
-├── 01-verde-herbal/  bio.html whatsapp.html vendas.html prompts-regeneracao.txt
-├── 02-terracota/     bio.html whatsapp.html vendas.html prompts-regeneracao.txt
-└── 03-azul-clinico/  bio.html whatsapp.html vendas.html prompts-regeneracao.txt
+├── 01-verde-herbal/  bio.html captura-leads.html vendas.html prompts-regeneracao.txt
+├── 02-terracota/     bio.html captura-leads.html vendas.html prompts-regeneracao.txt
+└── 03-azul-clinico/  bio.html captura-leads.html vendas.html prompts-regeneracao.txt
 hub/index.html        agrupado POR identidade (3 marcas → 9 sites), Baixar HTML + Copiar prompt
 ```
 - A pasta `modelos/` da v1 é **substituída** por `identidades/` (conteúdo superado).

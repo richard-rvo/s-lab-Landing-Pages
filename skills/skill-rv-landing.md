@@ -11,7 +11,7 @@ prompt) e tenha uma LP na marca dele que **não parece template de IA**.
 
 ## Quando usar
 
-- Criar um modelo novo para a galeria (link-bio, WhatsApp, página de vendas…).
+- Criar um modelo novo para a galeria (link-bio, captação de leads, página de vendas…).
 - Adaptar um modelo existente para outra pele/marca.
 - Revisar uma LP para tirar o "AI look".
 
@@ -55,7 +55,7 @@ no arquivo (no token); todo o resto é `var(--brand)`.
 ## 3. As 3 identidades (cor + tipografia + UX + VOZ)
 
 A unidade de trabalho é a **identidade**, não o tipo de página: cada identidade é
-uma marca completa que gera os 3 sites (`bio` / `whatsapp` / `vendas`) com a MESMA
+uma marca completa que gera os 3 sites (`bio` / `captura-leads` / `vendas`) com a MESMA
 cara e a MESMA voz. As 3 cobrem os 3 posicionamentos mais comuns de nutri. Escolha
 pela persona — cor, fonte E tom de voz mudam juntos.
 
@@ -127,7 +127,7 @@ A copy segue o AgentSkill de Copy (`agentskill-copy-lp-nutris.md`):
 
 - **Link-bio:** retrato → nome → credencial → bio-assinatura → stack de 5 links
   (1 primário + 4 ghost) → card de oferta → sociais → rodapé. CTA = link primário.
-- **LP de WhatsApp:** hero (headline + sub + 1 CTA) → 3 benefícios → como funciona
+- **LP de Captação de Leads:** hero (headline + sub + 1 CTA) → 3 benefícios → como funciona
   (3 passos) → prova curta → CTA final. **Um só destino:** `wa.me` com mensagem
   pré-preenchida (`?text=`). Foco mono-CTA.
 - **Página de vendas:** hero → dor/agitação → apresentação da solução → o que você

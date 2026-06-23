@@ -8,14 +8,14 @@
 
 ## 1. Objetivo
 
-Construir o **primeiro modelo ponta a ponta** da galeria: uma página de link-na-bio, mobile-first, single-file HTML, com a persona de uma nutricionista clínica funcional premium. Este modelo é o **padrão-ouro** — define a estrutura técnica, o formato do "copiar prompt" e o nível de acabamento que os outros 2 modelos (LP de WhatsApp, página de vendas de infoproduto) e o hub vão herdar.
+Construir o **primeiro modelo ponta a ponta** da galeria: uma página de link-na-bio, mobile-first, single-file HTML, com a persona de uma nutricionista clínica funcional premium. Este modelo é o **padrão-ouro** — define a estrutura técnica, o formato do "copiar prompt" e o nível de acabamento que os outros 2 modelos (LP de captação de leads, página de vendas de infoproduto) e o hub vão herdar.
 
 ### Por que link-na-bio primeiro
 É o degrau mais simples da escada de complexidade de copy. Validar o padrão aqui (single-file, tokenização, prompt de regeneração, retrato IA) reduz risco antes de escalar para peças maiores.
 
 ### Fora de escopo (deste spec)
 - O hub/galeria S-LAB que emoldura os modelos (spec próprio depois).
-- Os outros 2 modelos (LP WhatsApp, página de vendas).
+- Os outros 2 modelos (LP de captação de leads, página de vendas).
 - Deploy real no Netlify e configuração de DNS (é conteúdo de aula, não artefato de código).
 
 ---

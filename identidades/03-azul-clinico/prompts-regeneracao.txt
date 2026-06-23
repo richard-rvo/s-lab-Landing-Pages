@@ -23,7 +23,7 @@ SISTEMA DE DESIGN (vale para os 3 sites):
 com check → bio precisa (baseada em exames) → FAIXA DE DADOS (3 stats) → 5 links
 (1 primário azul + 4 ghost) → card de oferta escuro (acento âmbar) → ícones sociais → rodapé CRN.
 
-► SITE 2 · WHATSAPP (mono-CTA) — hero (headline de causa mensurável:
+► SITE 2 · CAPTAÇÃO DE LEADS (mono-CTA, leva ao WhatsApp) — hero (headline de causa mensurável:
 "Seu cansaço tem causa nos exames" + sub + botão verde) → FAIXA DE DADOS → 3 benefícios
 (decisão por dado / protocolo individual / acompanhamento mensurável) → como funciona
 (3 passos numerados 01/02/03) → prova (1 depoimento «confirme») → CTA final card escuro →
