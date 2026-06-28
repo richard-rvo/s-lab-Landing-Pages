@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-LAB · Trilha do Aulão — do zero ao funil no ar</title>
+<meta name="description" content="O passo a passo da aula: escolher a identidade, dar vida no Codex, publicar no Netlify e ligar o domínio próprio. Com a caixa 'se travar aqui' em cada etapa.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --orange-50:#FFF4E8;--orange-100:#FDE3C7;--orange-300:#F8A23B;--orange-500:#F08113;--orange-600:#E94D1D;--orange-700:#C13A12;
+  --brand-grad:linear-gradient(135deg,#F8A23B 0%,#F08113 48%,#E94D1D 100%);
+  --paper:#FAF7F2;--paper-2:#F2EEE7;--hairline:rgba(26,22,20,0.08);--hairline-strong:rgba(26,22,20,0.14);
+  --ink:#1A1614;--ink-2:#423B36;--stone:#87807A;--mist:#B8B1AB;
+  --font-display:"Plus Jakarta Sans",-apple-system,system-ui,sans-serif;--font-text:"Lora",Georgia,serif;--font-mono:"JetBrains Mono",ui-monospace,monospace;
+  --glass-shadow:0 30px 60px -20px rgba(170,90,40,0.18),0 12px 24px -16px rgba(26,22,20,0.16);
+  --card-shadow:0 22px 44px -26px rgba(170,90,40,0.30),0 6px 16px -12px rgba(26,22,20,0.12);
+  --shadow-cta:0 12px 24px -8px rgba(233,77,29,0.50),inset 0 1px 0 rgba(255,255,255,0.30);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-display);background:var(--paper);color:var(--ink);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+/* progresso da trilha */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--brand-grad);z-index:300;transition:width .12s linear;}
+
+.ambient{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.ambient::before{content:"";position:absolute;width:900px;height:900px;background:radial-gradient(circle,rgba(240,129,19,0.22),transparent 70%);filter:blur(150px);border-radius:50%;top:-340px;right:-280px;animation:driftA 14s ease-in-out infinite alternate;}
+.ambient::after{content:"";position:absolute;width:820px;height:820px;background:radial-gradient(circle,rgba(233,77,29,0.12),transparent 70%);filter:blur(150px);border-radius:50%;top:70%;left:-320px;animation:driftB 18s ease-in-out infinite alternate;}
+@keyframes driftA{from{transform:translate(0,0) scale(1);}to{transform:translate(-80px,60px) scale(1.1);}}
+@keyframes driftB{from{transform:translate(0,0) scale(1);}to{transform:translate(60px,-80px) scale(1.08);}}
+
+nav{position:sticky;top:16px;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;max-width:1200px;margin:16px auto 0;padding:12px 22px;background:rgba(250,247,242,0.72);backdrop-filter:blur(28px) saturate(140%);-webkit-backdrop-filter:blur(28px) saturate(140%);border:1px solid rgba(255,255,255,0.85);border-radius:999px;box-shadow:var(--glass-shadow);}
+.nav-logo{justify-self:start;font-weight:800;font-size:18px;letter-spacing:-0.02em;color:var(--ink);text-decoration:none;}
+.nav-logo b{background:var(--brand-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-mid{justify-self:center;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--stone);}
+.nav-cta{justify-self:end;display:inline-flex;align-items:center;gap:7px;font-family:var(--font-display);font-weight:700;font-size:13px;color:#fff;background:var(--brand-grad);padding:9px 16px;border-radius:999px;text-decoration:none;box-shadow:var(--shadow-cta);transition:transform .2s;}
+.nav-cta:hover{transform:translateY(-1px);}
+.nav-cta svg{width:14px;height:14px;}
+@media(max-width:560px){.nav-mid{display:none;}}
+
+.container{max-width:1200px;margin:0 auto;padding:0 28px;position:relative;z-index:1;}
+.hero{padding:80px 0 26px;text-align:center;}
+.hero .eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange-600);display:inline-flex;align-items:center;gap:10px;margin-bottom:24px;}
+.hero .eyebrow::before,.hero .eyebrow::after{content:"";width:18px;height:1px;background:var(--orange-500);}
+.hero h1{font-size:clamp(38px,6.4vw,66px);font-weight:800;letter-spacing:-0.045em;line-height:0.96;margin-bottom:22px;}
+.hero h1 .grad{background:var(--brand-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero p{font-family:var(--font-text);font-style:italic;font-size:clamp(16px,2.4vw,19px);line-height:1.55;color:var(--ink-2);max-width:600px;margin:0 auto;}
+.how{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:30px;}
+.how .chip{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:600;color:var(--ink-2);}
+.how .chip b{font-family:var(--font-mono);font-weight:600;color:var(--orange-600);}
+
+/* ===== A trilha ===== */
+.trail{max-width:840px;margin:54px auto 0;}
+.stage{display:grid;grid-template-columns:56px 1fr;gap:24px;position:relative;padding-bottom:38px;}
+.stage-rail{position:relative;}
+.stage-rail::before{content:"";position:absolute;left:50%;transform:translateX(-50%);top:62px;bottom:-38px;border-left:2px dashed var(--orange-300);opacity:.55;}
+.stage:last-of-type .stage-rail::before{display:none;}
+.stage-num{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-mono);font-weight:600;font-size:20px;color:var(--orange-600);background:rgba(255,255,255,0.7);backdrop-filter:blur(10px);border:1.5px solid var(--orange-100);box-shadow:0 10px 22px -12px rgba(170,90,40,0.35);position:sticky;top:96px;}
+
+.stage-body{background:rgba(255,255,255,0.56);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.82);border-radius:24px;padding:26px 30px;box-shadow:var(--card-shadow);}
+.stage-kicker{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange-600);}
+.stage-body h2{font-size:clamp(23px,4vw,33px);font-weight:800;letter-spacing:-0.03em;line-height:1.04;margin:9px 0 14px;}
+.stage-body h2 .grad{background:var(--brand-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.stage-goal{display:flex;gap:11px;align-items:baseline;font-family:var(--font-text);font-style:italic;font-size:16px;line-height:1.5;color:var(--ink-2);margin-bottom:18px;}
+.goal-tag{flex:0 0 auto;font-family:var(--font-mono);font-style:normal;font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange-700);background:var(--orange-50);border:1px solid var(--orange-100);padding:4px 8px;border-radius:7px;transform:translateY(-1px);}
+
+.do-label{font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);margin-bottom:12px;}
+.steps{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:11px;}
+.steps>li{position:relative;padding-left:36px;font-family:var(--font-text);font-size:15.5px;line-height:1.52;color:var(--ink-2);counter-increment:s;}
+.steps>li::before{content:counter(s);position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:8px;background:color-mix(in srgb,var(--orange-500) 12%,#fff);color:var(--orange-600);font-family:var(--font-mono);font-size:12px;font-weight:600;display:grid;place-items:center;}
+.steps b{font-family:var(--font-display);font-weight:700;color:var(--ink);}
+.steps code{font-family:var(--font-mono);font-size:13px;background:var(--paper-2);border:1px solid var(--hairline);padding:1px 6px;border-radius:6px;color:var(--ink);}
+.watch{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-text);font-size:15.5px;color:var(--ink-2);line-height:1.5;}
+
+/* nota explicativa (DNS) */
+.note{background:rgba(255,255,255,0.5);border-left:3px solid var(--orange-300);border-radius:0 14px 14px 0;padding:14px 18px;margin:2px 0 18px;font-family:var(--font-text);font-size:15px;line-height:1.56;color:var(--ink-2);}
+.note b{color:var(--ink);font-family:var(--font-display);font-weight:700;}
+
+/* diagrama de pastas */
+.tree{font-family:var(--font-mono);font-size:12.5px;line-height:1.85;color:var(--ink-2);background:rgba(255,255,255,0.5);border:1px solid var(--hairline);border-radius:14px;padding:16px 18px;margin:6px 0 18px;overflow-x:auto;white-space:pre;}
+.tree .p{color:var(--orange-600);font-weight:600;}
+.tree .u{color:var(--stone);}
+
+/* tabela de registros DNS */
+.dns-wrap{overflow-x:auto;margin:8px 0 16px;}
+.dns{width:100%;border-collapse:collapse;min-width:420px;}
+.dns th{font-family:var(--font-mono);font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);text-align:left;padding:7px 12px;border-bottom:1px solid var(--hairline-strong);font-weight:600;}
+.dns td{padding:11px 12px;border-bottom:1px solid var(--hairline);font-family:var(--font-text);font-size:14px;color:var(--ink-2);vertical-align:top;}
+.dns tr:last-child td{border-bottom:none;}
+.dns .lbl{font-family:var(--font-display);font-weight:700;color:var(--ink);font-size:13px;}
+.dns code{font-family:var(--font-mono);font-size:12.5px;background:var(--paper-2);border:1px solid var(--hairline);padding:2px 6px;border-radius:5px;color:var(--ink);white-space:nowrap;}
+.dns .blank{font-style:italic;color:var(--stone);}
+.dns .vary{color:var(--orange-700);font-weight:600;}
+
+/* dois caminhos */
+.method{font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange-700);font-weight:600;background:var(--orange-50);border:1px solid var(--orange-100);border-radius:8px;padding:6px 11px;display:inline-block;margin:4px 0 12px;}
+.or-div{display:flex;align-items:center;gap:14px;margin:26px 0 4px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--stone);}
+.or-div::before,.or-div::after{content:"";flex:1;height:1px;background:var(--hairline-strong);}
+
+/* aviso de ouro */
+.golden{margin:18px 0 2px;border-radius:18px;padding:18px 20px;background:var(--brand-grad);color:#fff;box-shadow:var(--shadow-cta);}
+.golden .glabel{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;opacity:.95;margin-bottom:8px;}
+.golden .glabel svg{width:16px;height:16px;}
+.golden p{font-family:var(--font-text);font-size:16px;line-height:1.5;}
+.golden b{font-family:var(--font-display);font-weight:700;}
+
+/* se travar aqui */
+.snag{margin-top:22px;background:linear-gradient(162deg,var(--orange-50),rgba(253,227,199,0.5));border:1px solid var(--orange-100);border-radius:18px;padding:18px 20px 8px;}
+.snag-head{display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange-700);font-weight:600;margin-bottom:6px;}
+.snag-head svg{width:18px;height:18px;}
+.snag-row{display:flex;gap:14px;padding:11px 0;border-top:1px dashed var(--orange-100);}
+.snag-q{flex:0 0 39%;font-weight:700;font-size:13.5px;line-height:1.4;color:var(--ink);}
+.snag-a{flex:1;font-family:var(--font-text);font-size:14px;line-height:1.46;color:var(--ink-2);}
+.snag-a code{font-family:var(--font-mono);font-size:12.5px;color:var(--orange-700);}
+
+@media(max-width:640px){
+  .container{padding:0 18px;}
+  .stage{grid-template-columns:44px 1fr;gap:14px;}
+  .stage-num{width:44px;height:44px;font-size:16px;}
+  .stage-rail::before{top:50px;bottom:-38px;}
+  .stage-body{padding:22px 20px;}
+  .snag-row{flex-direction:column;gap:3px;}
+  .snag-q{flex:none;}
+}
+
+/* finale */
+.finale{max-width:840px;margin:24px auto 0;text-align:center;background:linear-gradient(160deg,rgba(255,255,255,0.7),rgba(253,227,199,0.4));border:1px solid rgba(255,255,255,0.82);border-radius:28px;padding:46px 32px;box-shadow:var(--card-shadow);}
+.finale .eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--orange-600);margin-bottom:16px;}
+.finale h2{font-size:clamp(26px,4.6vw,40px);font-weight:800;letter-spacing:-0.035em;line-height:1.02;margin-bottom:14px;}
+.finale h2 .grad{background:var(--brand-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.finale p{font-family:var(--font-text);font-style:italic;font-size:17px;line-height:1.55;color:var(--ink-2);max-width:480px;margin:0 auto 26px;}
+.cta{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:15px;color:#fff;background:var(--brand-grad);padding:15px 28px;border-radius:999px;text-decoration:none;box-shadow:var(--shadow-cta);transition:transform .2s;}
+.cta:hover{transform:translateY(-2px);}
+.cta svg{width:17px;height:17px;}
+
+footer{position:relative;z-index:1;background:linear-gradient(160deg,#2A211B,#1A1614);padding:56px 32px;text-align:center;margin-top:64px;}
+footer .flogo{font-weight:800;font-size:22px;color:var(--paper);margin-bottom:10px;}
+footer .flogo b{background:var(--brand-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+footer p{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(250,247,242,0.4);}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+  .ambient::before,.ambient::after{animation:none;}
+  html{scroll-behavior:auto;}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="ambient"></div>
+
+<nav>
+  <a class="nav-logo" href="index.html">S<b>-</b>LAB</a>
+  <div class="nav-mid">Trilha do Aulão</div>
+  <a class="nav-cta" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5m6-7-7 7 7 7"/></svg>Galeria
+  </a>
+</nav>
+
+<div class="container">
+  <header class="hero">
+    <div class="eyebrow reveal in">IA na Prática · RV 2026 · Aulão final</div>
+    <h1 class="reveal in" style="transition-delay:60ms">Do zero ao<br><span class="grad">funil no ar.</span></h1>
+    <p class="reveal in" style="transition-delay:120ms">Siga no seu ritmo. Cada etapa tem o passo a passo e, em laranja, a caixa <b>“se travar aqui”</b> com a saída pras dúvidas mais comuns. Você não vai escrever nenhuma linha de código.</p>
+    <div class="how reveal in" style="transition-delay:180ms">
+      <span class="chip"><b>Site</b> personalizado</span>
+      <span class="chip"><b>Sem</b> saber programar</span>
+      <span class="chip"><b>Seu</b> domínio</span>
+    </div>
+  </header>
+
+  <main class="trail">
+
+    <!-- 0 -->
+    <section class="stage reveal">
+      <div class="stage-rail"><span class="stage-num">0</span></div>
+      <div class="stage-body">
+        <span class="stage-kicker">Etapa 00 · Vitrine</span>
+        <h2>As ferramentas ficaram <span class="grad">fáceis</span></h2>
+        <p class="stage-goal"><span class="goal-tag">objetivo</span> Ver que dá pra criar um site em segundos. E entender por que, ainda assim, a gente vai fazer do nosso jeito.</p>
+        <div class="do-label">Só assistir</div>
+        <p class="watch">Vamos iniciar pelo Lovable e V0 para criar uma página em uns 60 segundos cada. Ideal para pensar menos e deixar a IA fazer todo o trabalho.</p>
+        <div class="note">Esses atalhos funcionam. Só que o site fica com o nome <b>deles</b> no endereço (<b>sabrina.lovable.app</b>). A gente quer o <b>seu nome</b> lá (<b>sabrina.com.br</b>) — é o que faz a paciente bater o olho e confiar. Por isso, daqui pra frente, é a gente que constrói.</div>
+      </div>
+    </section>
+
+    <!-- 1 -->
+    <section class="stage reveal">
+      <div class="stage-rail"><span class="stage-num">1</span></div>
+      <div class="stage-body">
+        <span class="stage-kicker">Etapa 01 · Identidade</span>
+        <h2>Escolha a cara da sua marca</h2>
+        <p class="stage-goal"><span class="goal-tag">objetivo</span> Definir cor, fonte e jeito de falar antes de mexer em qualquer coisa. Numa identidade, os três já vêm combinados.</p>
+        <div class="do-label">O que fazer</div>
+        <ol class="steps">
+          <li>Abra a <b>Galeria</b> e veja as <b>3 identidades</b> lado a lado.</li>
+          <li>Escolha a que mais tem a ver com <b>você</b> e com a paciente que você quer atender:</li>
+        </ol>
+        <div class="note">
+          <b>Verde Herbal</b> — tom de amiga, anti-dieta, comportamental.<br>
+          <b>Terracota</b> — feminino, premium, hormonal, ticket alto.<br>
+          <b>Azul Clínico</b> — científico, baseado em exames e dados.
+        </div>
+        <div class="snag">
+          <div class="snag-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 17v-5m0-3h.01"/></svg>Se travar aqui</div>
+          <div class="snag-row"><div class="snag-q">“Não sei qual combina comigo”</div><div class="snag-a">Pense na paciente dos seus sonhos. Pra perfil médio, a <b>Verde</b> é a que mais converte — comece por ela.</div></div>
+          <div class="snag-row"><div class="snag-q">“Gosto de duas”</div><div class="snag-a">Escolha uma só para hoje. Você pode refazer com outra identidade depois — o método é o mesmo.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="stage reveal">
+      <div class="stage-rail"><span class="stage-num">2</span></div>
+      <div class="stage-body">
+        <span class="stage-kicker">Etapa 02 · Codex</span>
+        <h2>Deixar a <span class="grad">página de vendas</span> com a sua cara</h2>
+        <p class="stage-goal"><span class="goal-tag">objetivo</span> Pegar o modelo pronto e colocar os seus dados, sem bagunçar o visual.</p>
+        <div class="do-label">O que fazer</div>
+        <ol class="steps">
+          <li>Na Galeria, na sua identidade, no card <b>“Página de vendas”</b>, clique em <b>Prompt</b> (ele copia um texto pronto pra você).</li>
+          <li>Abra o <b>Codex</b>. É uma ferramenta de inteligência artificial que escreve o site pra você, parecida com o ChatGPT. Crie sua conta e entre.</li>
+          <li><b>Cole o texto</b> que você copiou e, logo abaixo, escreva os seus dados: nome, CRN, nome do produto, o que tem dentro, preço e o seu <b>link de pagamento</b> (Hotmart, Kiwify, etc.).</li>
+          <li>Envie e espere ele montar a página.</li>
+          <li><b>Salve o arquivo</b> que ele entregar (termina em <code>.html</code>).</li>
+        </ol>
+        <div class="snag">
+          <div class="snag-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 17v-5m0-3h.01"/></svg>Se travar aqui</div>
+          <div class="snag-row"><div class="snag-q">“Não sei o que mexer”</div><div class="snag-a">Troque só o que estiver entre <code>[colchetes]</code>. O resto está pronto.</div></div>
+          <div class="snag-row"><div class="snag-q">“Ele mudou o visual”</div><div class="snag-a">Responda: <i>“mantenha o layout exatamente, troque só os textos”</i>.</div></div>
+          <div class="snag-row"><div class="snag-q">“Veio em pedaços”</div><div class="snag-a">Peça: <i>“me entregue o arquivo HTML completo, num bloco só”</i>.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="stage reveal">
+      <div class="stage-rail"><span class="stage-num">3</span></div>
+      <div class="stage-body">
+        <span class="stage-kicker">Etapa 03 · Netlify</span>
+        <h2>Colocar no ar, de graça</h2>
+        <p class="stage-goal"><span class="goal-tag">objetivo</span> Publicar a sua página num endereço de verdade, sem cartão de crédito, em menos de um minuto.</p>
+        <div class="note"><b>O segredo do endereço:</b> no Netlify você não configura nada num painel. O que vem depois do seu domínio (o <code>/bio</code>, o <code>/vendas</code>) é simplesmente o <b>nome da pasta</b> onde o arquivo está. E todo arquivo precisa se chamar <code>index.html</code> — é isso que deixa o endereço limpo (<code>/vendas</code> em vez de <code>/vendas.html</code>).</div>
+        <div class="do-label">O que fazer</div>
+        <ol class="steps">
+          <li>Renomeie o arquivo da sua página para <code>index.html</code>.</li>
+          <li>Entre em <code>netlify.com</code> e crie sua conta. É grátis e não pede cartão.</li>
+          <li>Clique em <b>Add new site</b> e depois em <b>Deploy manually</b> (os botões ficam em inglês mesmo).</li>
+          <li><b>Arraste com o mouse</b> o arquivo (ou a pasta) e solte em cima do quadrado pontilhado. <b>Não clique</b> no botão de escolher arquivo — esse botão só aceita arquivo solto, nunca pasta.</li>
+          <li>Pronto: seu site já está no ar num endereço tipo <code>seu-site-123.netlify.app</code>. No próximo passo a gente troca pelo seu nome.</li>
+        </ol>
+        <div class="golden">
+          <div class="glabel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5m0 3h.01"/><circle cx="12" cy="12" r="9"/></svg>O pulo do gato pra subir pasta</div>
+          <p>Pra publicar uma <b>pasta</b>, arraste a pasta <b>fechada</b> — do jeito que ela aparece no seu computador. Se você abrir a pasta e arrastar os arquivos de dentro, o Netlify só sobe um arquivo. E nunca use o botão de “escolher arquivo”: ele não enxerga pastas. <b>É arrastar e soltar a pasta inteira, e pronto.</b></p>
+        </div>
+        <div class="do-label" style="margin-top:20px">E se você quiser o funil todo no mesmo domínio?</div>
+        <p class="watch" style="margin-bottom:6px">Coloque cada página dentro de uma pasta com o nome do caminho que você quer. Junte tudo dentro de <b>uma pasta-mãe</b> e arraste <b>essa pasta-mãe fechada</b> pro Netlify. Os endereços nascem prontos:</p>
+        <div class="tree"><span class="p">meu-site/</span>
+├─ <span class="p">bio/</span>
+│  └─ index.html   <span class="u">→  seunome.com.br/bio</span>
+├─ <span class="p">vendas/</span>
+│  └─ index.html   <span class="u">→  seunome.com.br/vendas</span>
+└─ <span class="p">captacao/</span>
+   └─ index.html   <span class="u">→  seunome.com.br/captacao</span></div>
+        <p class="watch">Vai ter <b>só a página de vendas</b>? Então nem precisa de pasta: deixe o <code>index.html</code> sozinho e ele vira o seu <code>seunome.com.br</code> direto.</p>
+        <div class="snag">
+          <div class="snag-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 17v-5m0-3h.01"/></svg>Se travar aqui</div>
+          <div class="snag-row"><div class="snag-q">“Só subiu o index, a pasta não foi”</div><div class="snag-a">Você arrastou os arquivos de dentro da pasta, ou usou o botão de escolher arquivo. <b>Arraste a pasta fechada</b>, do jeito que ela aparece no computador, e solte no quadrado.</div></div>
+          <div class="snag-row"><div class="snag-q">“Abriu em branco ou deu erro 404”</div><div class="snag-a">Quase sempre é o nome do arquivo. Dentro de cada pasta tem que existir um <code>index.html</code>. Confira e arraste de novo.</div></div>
+          <div class="snag-row"><div class="snag-q">“O endereço ficou /vendas.html, feio”</div><div class="snag-a">O arquivo está com o nome errado. Renomeie pra <code>index.html</code> e ponha dentro da pasta <code>vendas</code>.</div></div>
+          <div class="snag-row"><div class="snag-q">“Não acho o botão”</div><div class="snag-a">Procure <b>Sites</b> no topo e depois <b>Add new</b>.</div></div>
+          <div class="snag-row"><div class="snag-q">“O site saiu do ar depois”</div><div class="snag-a">O plano grátis de 2026 pode pausar se bater um teto de visitas. Numa página simples como essa é raríssimo. Se acontecer, me avise que a gente resolve.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="stage reveal">
+      <div class="stage-rail"><span class="stage-num">4</span></div>
+      <div class="stage-body">
+        <span class="stage-kicker">Etapa 04 · Domínio (DNS)</span>
+        <h2>Trocar por <span class="grad">sabrina.com.br</span></h2>
+        <p class="stage-goal"><span class="goal-tag">objetivo</span> Trocar o endereço da ferramenta pelo seu nome. É o que faz seu site parecer de gente grande.</p>
+        <div class="note"><b>O que é DNS, em uma frase:</b> é parecido com salvar um contato no celular. Você digita “Mãe” e o celular já sabe o número certo. Aqui é igual: alguém digita <b>sabrina.com.br</b> e a internet já sabe que o seu site está guardado no Netlify.</div>
+        <div class="do-label">Primeiro (serve pros dois caminhos)</div>
+        <ol class="steps">
+          <li><b>Compre o domínio</b> no <code>Registro.br</code> (o site oficial dos endereços <code>.com.br</code>). Custa uns R$40 por ano.</li>
+          <li>No Netlify, entre em <b>Domain settings</b>, clique em <b>Add a domain</b> e digite <code>sabrina.com.br</code>.</li>
+        </ol>
+        <div class="note">Agora vem a parte que mais gera dúvida. Existem <b>dois caminhos</b> pra ligar o domínio, e você escolhe <b>só um</b>. Fazer os dois ao mesmo tempo dá conflito. Na dúvida, vá de <b>Caminho B</b> — é o que tem menos campo pra errar.</div>
+
+        <div class="method">Caminho A · você cria os 2 registros</div>
+        <p class="watch" style="margin-bottom:12px">No Registro.br, abra seu domínio, desça até <b>DNS</b>, clique em <b>Editar Zona</b> e crie estes <b>2 registros</b>, exatamente assim:</p>
+        <div class="dns-wrap">
+          <table class="dns">
+            <thead><tr><th>Pra quê</th><th>Nome</th><th>Tipo</th><th>Dados (destino)</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="lbl">Seu nome puro<br>sabrina.com.br</td>
+                <td><span class="blank">deixe em branco</span><br>(ou <code>@</code>)</td>
+                <td><code>A</code></td>
+                <td><code>75.2.60.5</code></td>
+              </tr>
+              <tr>
+                <td class="lbl">Com www<br>www.sabrina.com.br</td>
+                <td><code>www</code></td>
+                <td><code>CNAME</code></td>
+                <td><span class="vary">seu-site-123.netlify.app</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">O <b>único</b> valor que muda de pessoa pra pessoa é o último em laranja: troque <code>seu-site-123.netlify.app</code> pelo endereço que o Netlify te deu na <b>Etapa 03</b> (sem <code>https://</code> e sem barra no fim). Todo o resto — inclusive o número <code>75.2.60.5</code> — é igual pra todo mundo. Depois é só salvar.</div>
+
+        <div class="or-div">ou</div>
+
+        <div class="method">Caminho B · o Netlify cuida sozinho</div>
+        <p class="watch" style="margin-bottom:12px">Aqui você <b>não digita IP nem tipo de registro</b>. Só troca os “servidores” do domínio por 4 endereços que o Netlify te dá:</p>
+        <ol class="steps">
+          <li>No Netlify, ao adicionar o domínio, escolha <b>Set up Netlify DNS</b> (usar o DNS do Netlify).</li>
+          <li>Ele mostra <b>4 endereços</b> parecidos com <code>dns1.p01.nsone.net</code>. Os seus 4 são únicos — copie os que aparecerem na sua tela.</li>
+          <li>No Registro.br, no seu domínio, procure <b>Alterar servidores DNS</b>. Cuidado: <b>não</b> é a “Editar Zona” do Caminho A.</li>
+          <li>Apague os servidores que já estão lá e cole os <b>4 do Netlify</b>, um por linha.</li>
+          <li>Salve. Pronto: o Netlify cria todos os registros sozinho.</li>
+        </ol>
+        <div class="note">Mais simples — zero campo de DNS pra errar. A diferença: o domínio passa a ser <b>gerenciado pelo Netlify</b>. Se um dia você precisar de e-mail no domínio, vai configurar lá, não no Registro.br.</div>
+        <div class="golden">
+          <div class="glabel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5m0 3h.01"/><circle cx="12" cy="12" r="9"/></svg>O aviso de ouro</div>
+          <p>Pode levar <b>até 48 horas</b> pra funcionar. Isso se chama <b>propagação</b> e é totalmente <b>normal</b>, não é erro seu. Não fique atualizando a página em pânico. Faça com calma: no dia seguinte estará no ar, com o cadeado de segurança que o Netlify liga sozinho.</p>
+        </div>
+        <div class="snag">
+          <div class="snag-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 17v-5m0-3h.01"/></svg>Se travar aqui</div>
+          <div class="snag-row"><div class="snag-q">“Não sei qual caminho escolher”</div><div class="snag-a">Vá de <b>Caminho B</b>: é só colar 4 linhas e deixar o Netlify trabalhar. O Caminho A só vale a pena se você quiser manter o domínio no Registro.br (por exemplo, se já tem e-mail lá).</div></div>
+          <div class="snag-row"><div class="snag-q">“Digitei meu domínio e não abriu”</div><div class="snag-a">É a propagação. Espere — pode levar horas. Volte mais tarde ou no dia seguinte.</div></div>
+          <div class="snag-row"><div class="snag-q">“Deu erro de segurança / sem cadeado”</div><div class="snag-a">Também é a propagação. O Netlify emite o certificado sozinho <b>depois</b> que o DNS resolve. Aguarde.</div></div>
+          <div class="snag-row"><div class="snag-q">“Não acho onde criar o CNAME”</div><div class="snag-a">Na primeira vez, o Registro.br pede pra ligar o <b>Modo Avançado</b> e esperar uns 15 minutos antes de liberar o CNAME. Ligue, tome um café e volte.</div></div>
+          <div class="snag-row"><div class="snag-q">“Acho que digitei errado”</div><div class="snag-a">Apague e refaça com os valores <b>exatos</b> da tabela acima. O <code>75.2.60.5</code> é igual pra todo mundo; só o <code>.netlify.app</code> é o seu.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="stage reveal">
+      <div class="stage-rail"><span class="stage-num">5</span></div>
+      <div class="stage-body">
+        <span class="stage-kicker">Etapa 05 · Em casa</span>
+        <h2>Complete o funil</h2>
+        <p class="stage-goal"><span class="goal-tag">objetivo</span> Você fez a página de vendas comigo. Agora é repetir o mesmo passo a passo, sozinha, pra bio e pra captação.</p>
+        <div class="do-label">O que fazer</div>
+        <ol class="steps">
+          <li>Volte à Galeria, na <b>sua</b> identidade.</li>
+          <li>Repita as <b>Etapas 02 e 03</b> nos cards <b>“Link na bio”</b> e <b>“Captação de leads”</b>.</li>
+          <li>Mesma identidade, mesmo jeito. Leva uns 5 minutos cada.</li>
+          <li>Junte as 3 pastas (<code>bio</code>, <code>vendas</code>, <code>captacao</code>) e arraste tudo de novo pro Netlify.</li>
+        </ol>
+        <div class="note">O único link pra ajustar é o botão da bio que leva pra venda: aponte ele pra <code>/vendas</code> e pronto. Resultado: <b>bio → captação → vendas</b>, tudo no seu domínio, no seu nome.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="finale reveal">
+    <div class="eyebrow">Fim da trilha</div>
+    <h2>Uma identidade.<br>O <span class="grad">funil inteiro</span> no ar.</h2>
+    <p>Volte à galeria sempre que quiser refazer com outra marca, ou pegar o próximo modelo.</p>
+    <a class="cta" href="index.html">
+      Abrir a Galeria
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+    </a>
+  </section>
+</div>
+
+<footer>
+  <div class="flogo">S<b>-</b>LAB</div>
+  <p>Laboratório de desenvolvimento profissional em Saúde · feito com Carinho 🧡</p>
+</footer>
+
+<script>
+// barra de progresso
+const bar = document.getElementById("progress");
+function onScroll(){
+  const h = document.documentElement;
+  const max = h.scrollHeight - h.clientHeight;
+  bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "%";
+}
+document.addEventListener("scroll", onScroll, {passive:true});
+onScroll();
+
+// reveal ao rolar
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((en) => { if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+}, {threshold:0.15, rootMargin:"0px 0px -8% 0px"});
+document.querySelectorAll(".reveal:not(.in)").forEach((el) => io.observe(el));
+</script>
+</body>
+</html>

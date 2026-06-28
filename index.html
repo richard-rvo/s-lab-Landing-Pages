@@ -35,6 +35,10 @@ nav{position:sticky;top:16px;z-index:100;display:grid;grid-template-columns:1fr 
 .nav-logo b{background:var(--brand-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 .nav-mid{justify-self:center;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--stone);}
 .nav-badge{font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange-600);padding:6px 14px;border-radius:999px;background:var(--orange-50);border:1px solid var(--orange-100);justify-self:end;}
+.nav-cta{justify-self:end;display:inline-flex;align-items:center;gap:7px;font-family:var(--font-display);font-weight:700;font-size:13px;color:#fff;background:var(--brand-grad);padding:9px 16px;border-radius:999px;text-decoration:none;box-shadow:var(--shadow-cta);transition:transform .2s;}
+.nav-cta:hover{transform:translateY(-1px);}
+.nav-cta svg{width:14px;height:14px;transition:transform .2s;}
+.nav-cta:hover svg{transform:translateX(2px);}
 
 .container{max-width:1200px;margin:0 auto;padding:0 28px;position:relative;z-index:1;}
 .hero{padding:88px 0 30px;text-align:center;}
@@ -120,7 +124,7 @@ footer p{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-
 <nav class="reveal">
   <div class="nav-logo">S<b>-</b>LAB</div>
   <div class="nav-mid">Galeria de Landing Pages</div>
-  <span class="nav-badge">3 identidades · 9 sites</span>
+  <a class="nav-cta" href="trilha.html">Trilha do aulão<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
 </nav>
 
 <div class="container">
@@ -140,7 +144,7 @@ footer p{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-
 
 <footer>
   <div class="flogo">S<b>-</b>LAB</div>
-  <p>Identidades novas toda semana · feito com IA na Prática</p>
+  <p>Laboratório de desenvolvimento profissional em Saúde · feito com Carinho 🧡</p>
 </footer>
 
 <div id="toast">Prompt copiado ✓</div>
