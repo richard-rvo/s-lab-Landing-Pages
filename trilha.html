@@ -37,9 +37,9 @@ body{font-family:var(--font-display);background:var(--paper);color:var(--ink);mi
 @keyframes driftA{from{transform:translate(0,0) scale(1);}to{transform:translate(-80px,60px) scale(1.1);}}
 @keyframes driftB{from{transform:translate(0,0) scale(1);}to{transform:translate(60px,-80px) scale(1.08);}}
 
-nav{position:sticky;top:16px;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;max-width:1200px;margin:16px auto 0;padding:12px 22px;background:rgba(250,247,242,0.72);backdrop-filter:blur(28px) saturate(140%);-webkit-backdrop-filter:blur(28px) saturate(140%);border:1px solid rgba(255,255,255,0.85);border-radius:999px;box-shadow:var(--glass-shadow);}
-.nav-logo{justify-self:start;font-weight:800;font-size:18px;letter-spacing:-0.02em;color:var(--ink);text-decoration:none;}
-.nav-logo b{background:var(--brand-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+nav{position:sticky;top:16px;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;max-width:1200px;margin:16px auto 0;padding:9px 18px;background:rgba(250,247,242,0.72);backdrop-filter:blur(28px) saturate(140%);-webkit-backdrop-filter:blur(28px) saturate(140%);border:1px solid rgba(255,255,255,0.85);border-radius:999px;box-shadow:var(--glass-shadow);}
+.nav-logo{justify-self:start;display:inline-flex;align-items:center;text-decoration:none;}
+.nav-logo img{width:98px;height:auto;display:block;}
 .nav-mid{justify-self:center;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--stone);}
 .nav-cta{justify-self:end;display:inline-flex;align-items:center;gap:7px;font-family:var(--font-display);font-weight:700;font-size:13px;color:#fff;background:var(--brand-grad);padding:9px 16px;border-radius:999px;text-decoration:none;box-shadow:var(--shadow-cta);transition:transform .2s;}
 .nav-cta:hover{transform:translateY(-1px);}
@@ -142,9 +142,9 @@ nav{position:sticky;top:16px;z-index:100;display:grid;grid-template-columns:1fr 
 .cta svg{width:17px;height:17px;}
 
 footer{position:relative;z-index:1;background:linear-gradient(160deg,#2A211B,#1A1614);padding:56px 32px;text-align:center;margin-top:64px;}
-footer .flogo{font-weight:800;font-size:22px;color:var(--paper);margin-bottom:10px;}
-footer .flogo b{background:var(--brand-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-footer p{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(250,247,242,0.4);}
+footer .flogo{width:min(170px,48vw);height:auto;display:block;margin:0 auto 18px;}
+footer .tagline{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(250,247,242,0.5);}
+footer .credit{margin-top:10px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(250,247,242,0.4);}
 
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
 .reveal.in{opacity:1;transform:none;}
@@ -160,7 +160,9 @@ footer p{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-
 <div class="ambient"></div>
 
 <nav>
-  <a class="nav-logo" href="index.html">S<b>-</b>LAB</a>
+  <a class="nav-logo" href="index.html" aria-label="S-LAB">
+    <img src="images/logo-color.png" alt="S-LAB">
+  </a>
   <div class="nav-mid">Trilha da Aula 03</div>
   <a class="nav-cta" href="index.html">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5m6-7-7 7 7 7"/></svg>Galeria
@@ -381,8 +383,9 @@ footer p{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-
 </div>
 
 <footer>
-  <div class="flogo">S<b>-</b>LAB</div>
-  <p>Laboratório de desenvolvimento profissional em Saúde · feito com Carinho 🧡</p>
+  <img class="flogo" src="images/logo-white.png" alt="S-LAB">
+  <p class="tagline">Laboratório de desenvolvimento profissional em Saúde</p>
+  <p class="credit">feito com Carinho 🧡 por Sabrina e Richard</p>
 </footer>
 
 <script>
