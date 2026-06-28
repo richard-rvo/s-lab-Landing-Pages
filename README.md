@@ -40,6 +40,7 @@ identidades/
 ├── 02-terracota/      bio.html · captura-leads.html · vendas.html · prompts-regeneracao.txt
 └── 03-azul-clinico/   bio.html · captura-leads.html · vendas.html · prompts-regeneracao.txt
 index.html         → a galeria S-LAB (âmbar/glass), agrupada por identidade
+trilha.html        → passo a passo da Aula 03 (do zero ao funil no ar, com "se travar aqui")
 skills/skill-rv-landing.md   → sistema de design das LPs (camaleão + 3 identidades + anti-IA)
 agentskill-copy-lp-nutris.md → AgentSkill de copy p/ criar um GPT no ChatGPT (voz por identidade)
 SKILL.md               → design system do S-LAB (rv-design, usado no hub)
@@ -109,7 +110,13 @@ cor de marca 1× por arquivo; sem hex de paleta fora do `:root` (neutros ok); um
 proibida; tags balanceadas; hub aponta para os 9 arquivos, prompts embutidos, download +
 copy com fallback, JS sem erro de sintaxe.
 
+### Trilha da Aula (`trilha.html`)
+
+Guia passo a passo que acompanha a aluna durante a Aula 03. Cobre: vitrine de ferramentas
+(Lovable/V0), escolha de identidade, geração no Codex, deploy no Netlify e configuração
+de domínio próprio (DNS). Cada etapa tem a caixa **"Se travar aqui"** com respostas para
+as dúvidas mais comuns.
+
 ### Próximos passos
 - Gerar os **retratos reais** das 3 personas (prompts prontos nos `.txt`).
-- Publicar hub + 9 sites no Netlify (conteúdo da aula).
 - Escalar: novas identidades seguindo `skills/skill-rv-landing.md`.
